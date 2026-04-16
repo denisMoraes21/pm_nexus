@@ -4,6 +4,7 @@
 int myFunction(int, int);
 
 void setup() {
+  Serial.println("Oi");
   // put your setup code here, to run once:
   int result = myFunction(2, 3);
 }
