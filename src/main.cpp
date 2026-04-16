@@ -94,7 +94,7 @@ void loop() {
 int myFunction(int, int);
 
 void setup() {
-  Serial.println("Oi");
+  Serial.println("Oi - Foxconn");
   // put your setup code here, to run once:
   int result = myFunction(2, 3);
 }
