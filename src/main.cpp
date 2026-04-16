@@ -1,19 +1,68 @@
+
 #include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+// ================================
+// 📌 Definição de pinos e PWM
+// ================================
+const int pinoLED = 23;     // Pino onde o LED está conectado
 
+// ================================
+// 💡 Níveis de intensidade
+// ================================
+const int desligado = 0;
+const int baixo     = 85;   // ~33%
+const int medio     = 170;  // ~66%
+const int alto      = 255;  // 100%
+
+// ================================
+// ⏱️ Tempo de blink (segundos)
+// ================================
+int tempoBlink = 2;
+
+void liga() {
+  analogWrite(pinoLED, alto);
+}
+
+void desliga() {
+  analogWrite(pinoLED, desligado);
+}
+void  
+
+// ================================
+// ⚙️ Setup (inicialização)
+// ================================
 void setup() {
-  Serial.println("Oi - Foxconn");
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
 }
 
+
+// ================================
+// 🔁 Loop principal
+// ================================
 void loop() {
-  // put your main code here, to run repeatedly:
-}
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  // 🔴 LED DESLIGADO
+  controlarLED(desligado);
+  delay(2000);
+
+  // 🟢 BAIXA INTENSIDADE
+  controlarLED(baixo);
+  delay(2000);
+
+  // 🟡 MÉDIA INTENSIDADE
+  controlarLED(medio);
+  delay(2000);
+
+  // 🔵 ALTA INTENSIDADE
+  controlarLED(alto);
+  delay(2000);
+
+  // ⚡ MODO PISCANDO (BLINK)
+  for (int i = 0; i < 5; i++) {
+
+    controlarLED(alto);                 // Liga forte
+    delay(tempoBlink * 1000);           // Espera X segundos
+
+    controlarLED(desligado);            // Desliga
+    delay(tempoBlink * 1000);           // Espera X segundos
+  }
 }
