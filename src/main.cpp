@@ -25,8 +25,7 @@ void liga() {
 
 void desliga() {
   analogWrite(pinoLED, desligado);
-}
-void  
+}  
 
 // ================================
 // ⚙️ Setup (inicialização)
@@ -41,28 +40,28 @@ void setup() {
 void loop() {
 
   // 🔴 LED DESLIGADO
-  controlarLED(desligado);
+  // controlarLED(desligado);
   delay(2000);
 
   // 🟢 BAIXA INTENSIDADE
-  controlarLED(baixo);
+  // controlarLED(baixo);
   delay(2000);
 
   // 🟡 MÉDIA INTENSIDADE
-  controlarLED(medio);
+  // controlarLED(medio);
   delay(2000);
 
   // 🔵 ALTA INTENSIDADE
-  controlarLED(alto);
+  // controlarLED(alto);
   delay(2000);
 
   // ⚡ MODO PISCANDO (BLINK)
   for (int i = 0; i < 5; i++) {
 
-    controlarLED(alto);                 // Liga forte
+    // controlarLED(alto);                 // Liga forte
     delay(tempoBlink * 1000);           // Espera X segundos
 
-    controlarLED(desligado);            // Desliga
+    // controlarLED(desligado);            // Desliga
     delay(tempoBlink * 1000);           // Espera X segundos
   }
 }
