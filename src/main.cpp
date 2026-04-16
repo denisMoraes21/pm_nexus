@@ -153,3 +153,4 @@ void loop() {
   // Aguarda 5 segundos antes do próximo envio
   delay(5000);
 }
+
