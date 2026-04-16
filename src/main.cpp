@@ -1,68 +1,68 @@
-
 #include <Arduino.h>
 
-// ================================
-// 📌 Definição de pinos e PWM
-// ================================
-const int pinoLED = 23;     // Pino onde o LED está conectado
+const int pinoLED = 23;
 
-// ================================
-// 💡 Níveis de intensidade
-// ================================
-const int desligado = 0;
-const int baixo     = 85;   // ~33%
-const int medio     = 170;  // ~66%
-const int alto      = 255;  // 100%
+// Estado do LED
+bool ledLigado = false;
 
-// ================================
-// ⏱️ Tempo de blink (segundos)
-// ================================
-int tempoBlink = 2;
-
-void liga() {
-  analogWrite(pinoLED, alto);
+// Função para LIGAR
+void ligar() {
+  ledLigado = true;
 }
 
-void desliga() {
-  analogWrite(pinoLED, desligado);
+// Função para DESLIGAR 
+void desligar() {
+  ledLigado = false;
+  digitalWrite(pinoLED, LOW); // garante que apagou
 }
-void  
 
-// ================================
-// ⚙️ Setup (inicialização)
-// ================================
+// Função para simular PWM
+void pwmManual(int tempoAlto, int tempoBaixo, int repeticoes) {
+
+  // Só executa se estiver ligado
+  if (!ledLigado) return;
+
+  for (int i = 0; i < repeticoes; i++) {
+    digitalWrite(pinoLED, HIGH);
+    delayMicroseconds(tempoAlto);
+
+    digitalWrite(pinoLED, LOW);
+    delayMicroseconds(tempoBaixo);
+  }
+}
+
 void setup() {
+  Serial.begin(115200); 
+  pinMode(pinoLED, OUTPUT);
 }
 
-
-// ================================
-// 🔁 Loop principal
-// ================================
 void loop() {
 
-  // 🔴 LED DESLIGADO
-  controlarLED(desligado);
+  // 🔴 DESLIGADO
+  desligar();
   delay(2000);
 
-  // 🟢 BAIXA INTENSIDADE
-  controlarLED(baixo);
+  // 🟢 LIGADO - Baixa intensidade
+  ligar();
+  pwmManual(200, 800, 5000);
+
+  // 🟡 Média intensidade
+  pwmManual(500, 500, 5000);
+
+  // 🔵 Alta intensidade
+  pwmManual(800, 200, 5000);
+
+  // 🔴 DESLIGA novamente
+  desligar();
   delay(2000);
 
-  // 🟡 MÉDIA INTENSIDADE
-  controlarLED(medio);
-  delay(2000);
-
-  // 🔵 ALTA INTENSIDADE
-  controlarLED(alto);
-  delay(2000);
-
-  // ⚡ MODO PISCANDO (BLINK)
+  // ⚡ BLINK (liga/desliga)
   for (int i = 0; i < 5; i++) {
+    ligar();
+    digitalWrite(pinoLED, HIGH);
+    delay(1000);
 
-    controlarLED(alto);                 // Liga forte
-    delay(tempoBlink * 1000);           // Espera X segundos
-
-    controlarLED(desligado);            // Desliga
-    delay(tempoBlink * 1000);           // Espera X segundos
+    desligar();
+    delay(1000);
   }
 }
