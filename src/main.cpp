@@ -9,10 +9,8 @@
 #include <WiFi.h>          // Conexão Wi-Fi do ESP32
 #include <PubSubClient.h>  // Comunicação MQTT (broker pub/sub)
 #include <ArduinoJson.h>   // Criação de payload JSON
+#include "wifi_config.h"
 
-// --- [2] CONFIGURAÇÕES DE REDE WI-FI ---
-const char* ssid     = "Aula";      // Nome da rede Wi-Fi
-const char* password = "20802080";     // Senha da rede Wi-Fi
 
 // --- [3] CONFIGURAÇÕES DO BROKER MQTT ---
 const char* mqtt_server = "192.168.137.35"; // Broker público
