@@ -1,6 +1,10 @@
 #include <Arduino.h>
+#include "pin_definition.h"
 
+<<<<<<< Updated upstream
 const int pinoLED = 23;
+=======
+>>>>>>> Stashed changes
 
 // Estado do LED
 bool ledLigado = false;
