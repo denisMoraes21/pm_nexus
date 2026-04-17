@@ -1,19 +1,14 @@
-#include <Arduino.h>
 
-// put function declarations here:
-int myFunction(int, int);
+#include <Arduino.h>
+#include "deep_sleep.h"
 
 void setup() {
-  Serial.println("Oi - Foxconn");
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+  Serial.begin(115200);
+  delay(1000);
+
+  deep_sleep(5);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-}
-
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
+  // Nunca será executado
 }
