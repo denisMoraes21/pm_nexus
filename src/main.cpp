@@ -65,19 +65,13 @@ void setup() {
 void loop() {
   printValues(particle);
   delay(delayTime);
-}
   
   Serial.begin(115200); // Inicia comunicação serial (monitor)
   Serial.println("\n=== Sistema de Sensores MQTT ===");
 
   conectarWiFi();                        // Conecta ao Wi-Fi
   client.setServer(mqtt_server, mqtt_port); // Configura o broker MQTT
-}
-
-// ============================================================
-// LOOP: Executado continuamente
-// ============================================================
-void loop() {
+  
   // Verifica conexão Wi-Fi — reconecta se necessário
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
