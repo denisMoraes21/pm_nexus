@@ -1,16 +1,16 @@
 #include <Arduino.h>
-#include "DFRobot_AirQualitySensor.h"
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 
-#define I2C_ADDRESS    0x19
+#include "particule_instance.h"
+
 #define SEALEVELPRESSURE_HPA (1013.25)
 
 Adafruit_BME280 bme;
 unsigned long delayTime;
 
-DFRobot_AirQualitySensor particle(&Wire ,I2C_ADDRESS);
+
 
 void setup() {
   Serial.begin(115200);
@@ -43,12 +43,14 @@ void setup() {
   delay(1000);
 }
 
+void printValues();
+
 void loop() {
-  // printValues("");
+  printValues();
   delay(delayTime);
 }
   
-  void printValues() {
+void printValues() {
   Serial.print("Temperature = ");
   int temp = random(25 , 50);
   Serial.print(temp);
