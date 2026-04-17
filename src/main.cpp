@@ -45,7 +45,7 @@
 #include "temperature_definition.h"
 #include "wifi_config.h"
 #include "WiFi_Client.h"
-#include "Public_dados.h"
+#include "public_dados.h"
 #include "WiFi_reconnect.h"
 
 #include "DFRobot_AirQualitySensor.h"
@@ -106,48 +106,11 @@ void loop()
         }
     }
 
-    float soma_temp = 0;
-    float soma_humid = 0;
-    float soma_particule_1 = 0;
-    float soma_particule_25 = 0;
-    float soma_particule_10 = 0;
-
-    for (int valor : temp_values)
-    {
-        soma_temp += valor;
-    }
-
-    const float temp_avg = soma_temp / temp_values.size();
-
-    for (int valor : humid_values)
-    {
-        soma_humid += valor;
-    }
-
-    const float humid_avg = soma_humid / humid_values.size();
-
-    for (int valor : temp_values)
-    {
-        soma_temp += valor;
-    }
-
-    // const float temp_avg = soma_temp / temp_values.size();
-
-    // for (int valor : temp_values) {
-    //     soma_temp += valor;
-    // }
-
-    // const float temp_avg = soma_temp / temp_values.size();
-
-    // for (int valor : temp_values) {
-    //     soma_temp += valor;
-    // }
-
-    // const float temp_avg = soma_temp / temp_values.size();
-
-    delay(1000);
-
-    Serial.println("\n=== Sistema de Sensores MQTT ===");
+    float temp = sensors::getAvgFloat(temp_values);
+    float humid = sensors::getAvgFloat(humid_values);
+    float particle_1 = sensors::getAvgInt(particle_values_1);
+    float particule_25 = sensors::getAvgInt(particle_values_25);
+    float particule_10 = sensors::getAvgInt(particle_values_10);
 
     conectarWiFi();
     client.setServer(mqtt_server, mqtt_port);
