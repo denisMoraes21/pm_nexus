@@ -1,146 +1,146 @@
-#include <Arduino.h>
-#include <Wire.h>
-#include <Adafruit_Sensor.h>
-#include "DFRobot_AirQualitySensor.h"
-#define I2C_ADDRESS    0x19
+/**
+ * @file        main.cpp
+ * @brief       Aplicação principal da aplicação
+ *
+ * @project     PM Nexus
+ * @platform    PlatformIO
+ * @board       ESP32 Dev Module (esp32dev) - ESP32 WROOM
+ * @framework   Arduino
+ *
+ * @details     Inicializa os módulos do sistema, configura periféricos
+ * @architecture
+ * sensores:
+ * - BME280: sensor de umidade e temperatura.
+ * - Gravity air quality sensor PM2.5: medidor de particulas.
+ *
+ * network:
+ * - WiFi: modo access point para cadastro e configuração de dispositivo.
+ * - MQTT: Envio de informações coletadas.
+ *
+ * energia:
+ * - Deep Sleep: modo de economia de energia ativado quando sensor estiver ocioso.
+ *
+ * @authors     Leonardo Souza Gomes, Batalha Amancio, Igor De Oliveira Damasceno, Carlos Daniel Amazonas Da Silva
+ * @date        2026-04-17
+ * @version     1.1
+ * @note        Configurações definidas em platformio.ini
+ **/
 
-DFRobot_AirQualitySensor particle(&Wire ,I2C_ADDRESS);
-#include "pin_definition.h"
-#include "led_state.h"
+// Bibliotecas externas == /lib
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BME280.h>
+#include <Arduino.h>
+#include <ArduinoJson.h>
+#include <DFRobot_AirQualitySensor.h>
+#include <PubSubClient.h>
+#include <WiFi.h>
+#include <Wire.h>
+
+// Módulos do projeto == /include
 #include "led_function.h"
+#include "led_state.h"
+#include "mqtt.h"
+#include "pin_definition.h"
+#include "sensors.h"
+#include "temperature_definition.h"
+#include "wifi_config.h"
+#include "WiFi_Client.h"
+#include "Public_dados.h"
+#include "WiFi_reconnect.h"
+
+#include "DFRobot_AirQualitySensor.h"
+#include <Adafruit_BME280.h>
+
+// Instâncias de sensores
+DFRobot_AirQualitySensor particle(&Wire);
+Adafruit_BME280 bme;
 
 // Estado do LED
 bool ledLigado = false;
 
-// Função para simular PWM
-void pwmManual(int tempoAlto, int tempoBaixo, int repeticoes, bool ledLigado) {
+void setup()
+{
+    Serial.begin(115200);
 
-  // Só executa se estiver ligado
-  if (!ledLigado) return;
+    bool status;
 
-  for (int i = 0; i < repeticoes; i++) {
-    digitalWrite(pinoLED, HIGH);
-    delayMicroseconds(tempoAlto);
-
-    digitalWrite(pinoLED, LOW);
-    delayMicroseconds(tempoBaixo);
-  }
+    sensors::initBME250(bme);
+    sensors::initGRAVITYPM25(particle);
+    pinMode(pinoLED, OUTPUT);
 }
 
-#include "temperature_definition.h"
-#include "print_values.h"
+void loop()
+{
+    BME250data bme_250_data = sensors::getBME250values(bme);
+    sensors::printBME250Values(bme_250_data);
 
-// ============================================================
-// PROJETO: Envio de Dados de Sensores via MQTT com ESP32
-// PLATAFORMA: Arduino IDE 2.3.8 | ESP32
-// BIBLIOTECAS: WiFi.h, PubSubClient.h, ArduinoJson.h
-// AUTOR: Gerado para fins educacionais
-// ============================================================
+    const float temp = bme_250_data.temp;
+    const float humidity = bme_250_data.humid;
 
-// --- [1] INCLUSÃO DE BIBLIOTECAS ---
-#include <WiFi.h>          // Conexão Wi-Fi do ESP32
-#include <PubSubClient.h>  // Comunicação MQTT (broker pub/sub)
-#include <ArduinoJson.h>   // Criação de payload JSON
-#include "wifi_config.h"
-#include "mqtt.h"
-#include "WiFi_Client.h"
-#include "WiFi_reconnect.h"
-#include "Public_dados.h"
+    // Temperatura e umidade está dentro da spec?
+    if (temp > 0 && temp < 50 && humidity < 95)
+    {
+        GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
+        sensors::printGRAVITYPM25Values(particule_data);
 
-// ============================================================
-// SETUP: Executado uma vez na inicialização
-// ============================================================
-void setup() {
-  Serial.begin(115200);
+        // Quantidade de particulas está dentro da spec?
+    }
 
-  bool status;
-  
-  // default settings
-  // (you can also pass in a Wire library object like &Wire2)
-//  status = bme.begin();  
-//  if (!status) {
-//    Serial.println("Could not find a valid BME280 sensor, check wiring!");
-//    while (1);
-//  }
-  
-  Serial.println("-- Default Test --");
-  delayTime = 1000;
+    delay(1000);
 
-  Serial.println();
-//  while(!particle.begin())
-//  {
-//    Serial.println("NO Deivces !");
-//    delay(1000);
-//  }
-  Serial.println("sensor begin success!");
-  delay(1000);
-  
-  uint8_t version = particle.gainVersion();
-  Serial.print("version is : ");
-  Serial.println(version);
-  delay(1000);
-  Serial.begin(115200); 
-  pinMode(pinoLED, OUTPUT);
-}
+    Serial.println("\n=== Sistema de Sensores MQTT ===");
 
-
-
-void loop() {
-  printValues(particle);
-  delay(delayTime);
-  
-  Serial.begin(115200); // Inicia comunicação serial (monitor)
-  Serial.println("\n=== Sistema de Sensores MQTT ===");
-
-  conectarWiFi();                        // Conecta ao Wi-Fi
-  client.setServer(mqtt_server, mqtt_port); // Configura o broker MQTT
-  
-  // Verifica conexão Wi-Fi — reconecta se necessário
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
-    // WiFi.disconnect();     // encerra conexão atual antes de reconectar
     conectarWiFi();
-  }
+    client.setServer(mqtt_server, mqtt_port);
 
-  // Verifica conexão MQTT — reconecta se necessário
-  if (!client.connected()) {
-    reconnect();
-  }
+    // Verifica conexão Wi-Fi — reconecta se necessário
+    if (WiFi.status() != WL_CONNECTED)
+    {
+        Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
+        conectarWiFi();
+    }
 
-  // Mantém a conexão MQTT ativa (processamento interno da lib)
-  client.loop();
+    // Verifica conexão MQTT — reconecta se necessário
+    if (!client.connected())
+    {
+        reconnect();
+    }
 
-  // Publica os dados dos sensores
-  publicarDados();
+    // Mantém a conexão MQTT ativa (processamento interno da lib)
+    client.loop();
 
-  // Aguarda 5 segundos antes do próximo envio
-  delay(5000);
+    // Publica os dados dos sensores
+    publicarDados();
 
-  // 🔴 DESLIGADO
-  desligar(ledLigado);
-  delay(2000);
+    // Aguarda 5 segundos antes do próximo envio
+    delay(5000);
 
-  // 🟢 LIGADO - Baixa intensidade
-  ligar(ledLigado);
-  pwmManual(200, 800, 5000, ledLigado);
-
-  // 🟡 Média intensidade
-  pwmManual(500, 500, 5000, ledLigado);
-
-  // 🔵 Alta intensidade
-  pwmManual(800, 200, 5000, ledLigado);
-
-  // 🔴 DESLIGA novamente
-  desligar(ledLigado);
-  delay(2000);
-
-  // ⚡ BLINK (liga/desliga)
-  for (int i = 0; i < 5; i++) {
-    ligar(ledLigado);
-    digitalWrite(pinoLED, HIGH);
-    delay(1000);
-
+    // 🔴 DESLIGADO
     desligar(ledLigado);
-    delay(1000);
-  }
+    delay(2000);
+
+    // 🟢 LIGADO - Baixa intensidade
+    ligar(ledLigado);
+    pwmManual(200, 800, 5000, ledLigado);
+
+    // 🟡 Média intensidade
+    pwmManual(500, 500, 5000, ledLigado);
+
+    // 🔵 Alta intensidade
+    pwmManual(800, 200, 5000, ledLigado);
+
+    // 🔴 DESLIGA novamente
+    desligar(ledLigado);
+    delay(2000);
+
+    // ⚡ BLINK (liga/desliga)
+    for (int i = 0; i < 5; i++)
+    {
+        ligar(ledLigado);
+        digitalWrite(pinoLED, HIGH);
+        delay(1000);
+
+        desligar(ledLigado);
+        delay(1000);
+    }
 }
