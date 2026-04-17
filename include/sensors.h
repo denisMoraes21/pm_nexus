@@ -22,7 +22,7 @@ struct GRAVITYPM25data
 namespace sensors
 {
     void initBME250(Adafruit_BME280 &bme);
-    void sensors::initGRAVITYPM25(DFRobot_AirQualitySensor &particle);
+    void initGRAVITYPM25(DFRobot_AirQualitySensor &particle);
     BME250data getBME250values(Adafruit_BME280 &bme);
     GRAVITYPM25data getGRAVITYPM25values(DFRobot_AirQualitySensor &particle);
     void printBME250Values(BME250data data);

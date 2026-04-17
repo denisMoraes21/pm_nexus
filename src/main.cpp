@@ -35,6 +35,7 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 #include <Wire.h>
+#include <vector>
 
 // Módulos do projeto == /include
 #include "led_function.h"
@@ -66,6 +67,7 @@ void setup()
 
     sensors::initBME250(bme);
     sensors::initGRAVITYPM25(particle);
+
     pinMode(pinoLED, OUTPUT);
 }
 
