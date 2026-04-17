@@ -1,27 +1,13 @@
 #include <Arduino.h>
 #include "pin_definition.h"
-
-<<<<<<< Updated upstream
-const int pinoLED = 23;
-=======
->>>>>>> Stashed changes
+#include "led_state.h"
+#include "led_function.h"
 
 // Estado do LED
 bool ledLigado = false;
 
-// Função para LIGAR
-void ligar() {
-  ledLigado = true;
-}
-
-// Função para DESLIGAR 
-void desligar() {
-  ledLigado = false;
-  digitalWrite(pinoLED, LOW); // garante que apagou
-}
-
 // Função para simular PWM
-void pwmManual(int tempoAlto, int tempoBaixo, int repeticoes) {
+void pwmManual(int tempoAlto, int tempoBaixo, int repeticoes, bool ledLigado) {
 
   // Só executa se estiver ligado
   if (!ledLigado) return;
@@ -43,30 +29,30 @@ void setup() {
 void loop() {
 
   // 🔴 DESLIGADO
-  desligar();
+  desligar(ledLigado);
   delay(2000);
 
   // 🟢 LIGADO - Baixa intensidade
-  ligar();
-  pwmManual(200, 800, 5000);
+  ligar(ledLigado);
+  pwmManual(200, 800, 5000, ledLigado);
 
   // 🟡 Média intensidade
-  pwmManual(500, 500, 5000);
+  pwmManual(500, 500, 5000, ledLigado);
 
   // 🔵 Alta intensidade
-  pwmManual(800, 200, 5000);
+  pwmManual(800, 200, 5000, ledLigado);
 
   // 🔴 DESLIGA novamente
-  desligar();
+  desligar(ledLigado);
   delay(2000);
 
   // ⚡ BLINK (liga/desliga)
   for (int i = 0; i < 5; i++) {
-    ligar();
+    ligar(ledLigado);
     digitalWrite(pinoLED, HIGH);
     delay(1000);
 
-    desligar();
+    desligar(ledLigado);
     delay(1000);
   }
 }
