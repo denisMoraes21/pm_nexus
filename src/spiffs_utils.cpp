@@ -1,27 +1,23 @@
-#ifndef SPIFFS_UTILS_H
-#define SPIFFS_UTILS_H
+#include "spiffs_utils.h"
 
-#include <Arduino.h>
-#include <FS.h>
-#include <SPIFFS.h>
 
-#define BAUD_RATE          115200
-#define MODO_SOBRESCREVER  0
-#define MODO_ACRESCENTAR   1
-
-inline bool criarArquivo(const char* nome, const char* conteudo) {
-  if (!nome || nome[0] == '\0') {
+inline bool criarArquivo(const char *nome, const char *conteudo)
+{
+  if (!nome || nome[0] == '\0')
+  {
     Serial.println(F("  [ERRO] Nome invalido."));
     return false;
   }
 
-  if (!conteudo) {
+  if (!conteudo)
+  {
     Serial.println(F("  [ERRO] Conteudo nulo."));
     return false;
   }
 
   File f = SPIFFS.open(nome, "w");
-  if (!f) {
+  if (!f)
+  {
     Serial.print(F("  [ERRO] Nao foi possivel criar '"));
     Serial.print(nome);
     Serial.println(F("'."));
@@ -31,7 +27,8 @@ inline bool criarArquivo(const char* nome, const char* conteudo) {
   size_t n = f.print(conteudo);
   f.close();
 
-  if (n == 0 && strlen(conteudo) > 0) {
+  if (n == 0 && strlen(conteudo) > 0)
+  {
     Serial.println(F("  [AVISO] Nenhum byte gravado (flash cheia?)."));
     return false;
   }
@@ -39,27 +36,33 @@ inline bool criarArquivo(const char* nome, const char* conteudo) {
   return true;
 }
 
-inline bool editarArquivo(const char* nome, const char* novoConteudo, uint8_t modo) {
-  if (!nome || nome[0] == '\0') {
+inline bool editarArquivo(const char *nome, const char *novoConteudo, uint8_t modo)
+{
+  if (!nome || nome[0] == '\0')
+  {
     Serial.println(F("  [ERRO] Nome invalido."));
     return false;
   }
 
-  if (!novoConteudo) {
+  if (!novoConteudo)
+  {
     Serial.println(F("  [ERRO] Conteudo nulo."));
     return false;
   }
 
-  if (!SPIFFS.exists(nome)) {
+  if (!SPIFFS.exists(nome))
+  {
     Serial.print(F("  [ERRO] Arquivo '"));
     Serial.print(nome);
     Serial.println(F("' nao encontrado."));
     return false;
   }
 
-  if (modo == MODO_ACRESCENTAR) {
+  if (modo == MODO_ACRESCENTAR)
+  {
     File f = SPIFFS.open(nome, "a");
-    if (!f) {
+    if (!f)
+    {
       Serial.print(F("  [ERRO] Nao foi possivel abrir '"));
       Serial.print(nome);
       Serial.println(F("' para append."));
@@ -69,7 +72,8 @@ inline bool editarArquivo(const char* nome, const char* novoConteudo, uint8_t mo
     size_t n = f.print(novoConteudo);
     f.close();
 
-    if (n == 0 && strlen(novoConteudo) > 0) {
+    if (n == 0 && strlen(novoConteudo) > 0)
+    {
       Serial.println(F("  [AVISO] Nenhum byte acrescentado (flash cheia?)."));
       return false;
     }
@@ -77,9 +81,11 @@ inline bool editarArquivo(const char* nome, const char* novoConteudo, uint8_t mo
     return true;
   }
 
-  if (modo == MODO_SOBRESCREVER) {
+  if (modo == MODO_SOBRESCREVER)
+  {
     File f = SPIFFS.open(nome, "w");
-    if (!f) {
+    if (!f)
+    {
       Serial.print(F("  [ERRO] Nao foi possivel abrir '"));
       Serial.print(nome);
       Serial.println(F("' para sobrescrita."));
@@ -89,7 +95,8 @@ inline bool editarArquivo(const char* nome, const char* novoConteudo, uint8_t mo
     size_t n = f.print(novoConteudo);
     f.close();
 
-    if (n == 0 && strlen(novoConteudo) > 0) {
+    if (n == 0 && strlen(novoConteudo) > 0)
+    {
       Serial.println(F("  [AVISO] Nenhum byte gravado (flash cheia?)."));
       return false;
     }
@@ -102,20 +109,24 @@ inline bool editarArquivo(const char* nome, const char* novoConteudo, uint8_t mo
   return false;
 }
 
-inline bool apagarArquivo(const char* nome) {
-  if (!nome || nome[0] == '\0') {
+inline bool apagarArquivo(const char *nome)
+{
+  if (!nome || nome[0] == '\0')
+  {
     Serial.println(F("  [ERRO] Nome invalido."));
     return false;
   }
 
-  if (!SPIFFS.exists(nome)) {
+  if (!SPIFFS.exists(nome))
+  {
     Serial.print(F("  [ERRO] Arquivo '"));
     Serial.print(nome);
     Serial.println(F("' nao existe."));
     return false;
   }
 
-  if (!SPIFFS.remove(nome)) {
+  if (!SPIFFS.remove(nome))
+  {
     Serial.print(F("  [ERRO] Falha ao remover '"));
     Serial.print(nome);
     Serial.println(F("'."));
@@ -125,28 +136,31 @@ inline bool apagarArquivo(const char* nome) {
   return true;
 }
 
-inline void lerArquivo(const char* nome) {
-  if (!SPIFFS.exists(nome)) {
+inline void lerArquivo(const char *nome)
+{
+  if (!SPIFFS.exists(nome))
+  {
     Serial.println(F("  [Arquivo nao encontrado]"));
     return;
   }
 
   File f = SPIFFS.open(nome, "r");
-  if (!f) {
+  if (!f)
+  {
     Serial.println(F("  [Erro ao abrir para leitura]"));
     return;
   }
 
   Serial.println(F("  -- conteudo --"));
-  while (f.available()) {
+  while (f.available())
+  {
     Serial.write(f.read());
   }
   Serial.println(F("  --------------"));
   f.close();
 }
 
-inline void sep() {
+inline void sep()
+{
   Serial.println(F("------------------------------------"));
 }
-
-#endif
