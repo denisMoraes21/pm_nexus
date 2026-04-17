@@ -79,6 +79,24 @@ void sensors::printGRAVITYPM25Values(GRAVITYPM25data data)
     Serial.printf("PM10 = %.2f ug/m3", data.pm10);
 }
 
-float getAvg(const std::vector<int> list_values)
+float sensors::getAvgInt(const std::vector<int> list_values)
 {
+    int soma = 0;
+    for (int valor : list_values)
+    {
+        soma += valor;
+    }
+    const float avg = soma / list_values.size();
+    return avg;
+}
+
+float sensors::getAvgFloat(const std::vector<float> list_values)
+{
+    float soma = 0;
+    for (float valor : list_values)
+    {
+        soma += valor;
+    }
+    const float avg = soma / list_values.size();
+    return avg;
 }

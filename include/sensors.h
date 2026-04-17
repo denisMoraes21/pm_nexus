@@ -28,5 +28,6 @@ namespace sensors
     GRAVITYPM25data getGRAVITYPM25values(DFRobot_AirQualitySensor &particle);
     void printBME250Values(BME250data data);
     void printGRAVITYPM25Values(GRAVITYPM25data data);
-    float getAvg(const std::vector<int> list_values);
+    float getAvgInt(const std::vector<int> list_values);
+    float getAvgFloat(const std::vector<float> list_values);
 }
