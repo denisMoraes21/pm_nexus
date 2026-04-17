@@ -35,7 +35,6 @@
 #include <PubSubClient.h>
 #include <WiFi.h>
 #include <Wire.h>
-#include <vector>
 
 // Módulos do projeto == /include
 #include "led_function.h"
@@ -73,20 +72,78 @@ void setup()
 
 void loop()
 {
-    BME250data bme_250_data = sensors::getBME250values(bme);
-    sensors::printBME250Values(bme_250_data);
+    std::vector<float> temp_values;
+    std::vector<float> humid_values;
+    std::vector<int> particle_values_1;
+    std::vector<int> particle_values_25;
+    std::vector<int> particle_values_10;
 
-    const float temp = bme_250_data.temp;
-    const float humidity = bme_250_data.humid;
-
-    // Temperatura e umidade está dentro da spec?
-    if (temp > 0 && temp < 50 && humidity < 95)
+    for (int i = 0; i < 30; i++)
     {
-        GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
-        sensors::printGRAVITYPM25Values(particule_data);
+        BME250data bme_250_data = sensors::getBME250values(bme);
+        sensors::printBME250Values(bme_250_data);
 
-        // Quantidade de particulas está dentro da spec?
+        const float temperature = bme_250_data.temp;
+        const float humidity = bme_250_data.humid;
+
+        // Temperatura e umidade está dentro da spec?
+        if (temperature > 0 && temperature < 50 && humidity < 95)
+        {
+            GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
+            sensors::printGRAVITYPM25Values(particule_data);
+
+            // Quantidade de particulas está dentro da spec?
+
+            const int pm_1 = particule_data.pm1;
+            const int pm_25 = particule_data.pm25;
+            const int pm_10 = particule_data.pm10;
+
+            temp_values.push_back(temperature);
+            humid_values.push_back(humidity);
+            particle_values_1.push_back(pm_1);
+            particle_values_25.push_back(pm_25);
+            particle_values_10.push_back(pm_10);
+        }
     }
+
+    float soma_temp = 0;
+    float soma_humid = 0;
+    float soma_particule_1 = 0;
+    float soma_particule_25 = 0;
+    float soma_particule_10 = 0;
+
+    for (int valor : temp_values)
+    {
+        soma_temp += valor;
+    }
+
+    const float temp_avg = soma_temp / temp_values.size();
+
+    for (int valor : humid_values)
+    {
+        soma_humid += valor;
+    }
+
+    const float humid_avg = soma_humid / humid_values.size();
+
+    for (int valor : temp_values)
+    {
+        soma_temp += valor;
+    }
+
+    // const float temp_avg = soma_temp / temp_values.size();
+
+    // for (int valor : temp_values) {
+    //     soma_temp += valor;
+    // }
+
+    // const float temp_avg = soma_temp / temp_values.size();
+
+    // for (int valor : temp_values) {
+    //     soma_temp += valor;
+    // }
+
+    // const float temp_avg = soma_temp / temp_values.size();
 
     delay(1000);
 

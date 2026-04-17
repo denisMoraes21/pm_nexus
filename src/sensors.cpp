@@ -13,9 +13,9 @@ void sensors::initBME250(Adafruit_BME280 &bme)
 #endif
 }
 
-void sensors::initGRAVITYPM25(DFRobot_AirQualitySensor &particle) 
+void sensors::initGRAVITYPM25(DFRobot_AirQualitySensor &particle)
 {
-    #ifndef ENABLE_SENSORS
+#ifndef ENABLE_SENSORS
     while (!particle.begin())
     {
         Serial.println("NO Deivces !");
@@ -25,7 +25,7 @@ void sensors::initGRAVITYPM25(DFRobot_AirQualitySensor &particle)
     delay(1000)
 #endif
 }
- 
+
 BME250data sensors::getBME250values(Adafruit_BME280 &bme)
 {
 
@@ -77,4 +77,8 @@ void sensors::printGRAVITYPM25Values(GRAVITYPM25data data)
     Serial.printf("PM1.0 = %.2f ug/m3", data.pm1);
     Serial.printf("PM2.5 = %.2f ug/m3", data.pm25);
     Serial.printf("PM10 = %.2f ug/m3", data.pm10);
+}
+
+float getAvg(const std::vector<int> list_values)
+{
 }

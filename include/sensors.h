@@ -3,6 +3,7 @@
 #include <Arduino.h>
 #include "DFRobot_AirQualitySensor.h"
 #include <Adafruit_BME280.h>
+#include <vector>
 
 struct BME250data
 {
@@ -27,4 +28,5 @@ namespace sensors
     GRAVITYPM25data getGRAVITYPM25values(DFRobot_AirQualitySensor &particle);
     void printBME250Values(BME250data data);
     void printGRAVITYPM25Values(GRAVITYPM25data data);
+    float getAvg(const std::vector<int> list_values);
 }
