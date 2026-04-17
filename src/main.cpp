@@ -60,109 +60,125 @@ bool ledLigado = false;
 
 void setup()
 {
-    Serial.begin(115200);
+  Serial.begin(115200);
 
-    bool status;
+  bool status;
 
-    sensors::initBME250(bme);
-    sensors::initGRAVITYPM25(particle);
+  sensors::initBME250(bme);
+  sensors::initGRAVITYPM25(particle);
 
-    pinMode(pinoLED, OUTPUT);
+  pinMode(pinoLED, OUTPUT);
 }
 
 void loop()
 {
-    std::vector<float> temp_values;
-    std::vector<float> humid_values;
-    std::vector<int> particle_values_1;
-    std::vector<int> particle_values_25;
-    std::vector<int> particle_values_10;
+  std::vector<float> temp_values;
+  std::vector<float> humid_values;
+  std::vector<int> particle_values_1;
+  std::vector<int> particle_values_25;
+  std::vector<int> particle_values_10;
 
-    for (int i = 0; i < 30; i++)
+  for (int i = 0; i < 30; i++)
+  {
+    BME250data bme_250_data = sensors::getBME250values(bme);
+    sensors::printBME250Values(bme_250_data);
+
+    const float temperature = bme_250_data.temp;
+    const float humidity = bme_250_data.humid;
+
+    // Temperatura e umidade está dentro da spec?
+    if (temperature > 0 && temperature < 50 && humidity < 95)
     {
-        BME250data bme_250_data = sensors::getBME250values(bme);
-        sensors::printBME250Values(bme_250_data);
+      GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
+      sensors::printGRAVITYPM25Values(particule_data);
 
-        const float temperature = bme_250_data.temp;
-        const float humidity = bme_250_data.humid;
+      // Quantidade de particulas está dentro da spec?
 
-        // Temperatura e umidade está dentro da spec?
-        if (temperature > 0 && temperature < 50 && humidity < 95)
-        {
-            GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
-            sensors::printGRAVITYPM25Values(particule_data);
+      const int pm_1 = particule_data.pm1;
+      const int pm_25 = particule_data.pm25;
+      const int pm_10 = particule_data.pm10;
 
-            // Quantidade de particulas está dentro da spec?
-
-            const int pm_1 = particule_data.pm1;
-            const int pm_25 = particule_data.pm25;
-            const int pm_10 = particule_data.pm10;
-
-            temp_values.push_back(temperature);
-            humid_values.push_back(humidity);
-            particle_values_1.push_back(pm_1);
-            particle_values_25.push_back(pm_25);
-            particle_values_10.push_back(pm_10);
-        }
+      temp_values.push_back(temperature);
+      humid_values.push_back(humidity);
+      particle_values_1.push_back(pm_1);
+      particle_values_25.push_back(pm_25);
+      particle_values_10.push_back(pm_10);
     }
+  }
 
-    float temp = sensors::getAvgFloat(temp_values);
-    float humid = sensors::getAvgFloat(humid_values);
-    float particle_1 = sensors::getAvgInt(particle_values_1);
-    float particule_25 = sensors::getAvgInt(particle_values_25);
-    float particule_10 = sensors::getAvgInt(particle_values_10);
+  float temp = sensors::getAvgFloat(temp_values);
+  float humid = sensors::getAvgFloat(humid_values);
+  float particle_1 = sensors::getAvgInt(particle_values_1);
+  float particule_25 = sensors::getAvgInt(particle_values_25);
+  float particule_10 = sensors::getAvgInt(particle_values_10);
 
+  conectarWiFi();
+  client.setServer(mqtt_server, mqtt_port);
+
+  // Verifica conexão Wi-Fi — reconecta se necessário
+  if (WiFi.status() != WL_CONNECTED)
+  {
+    Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
     conectarWiFi();
-    client.setServer(mqtt_server, mqtt_port);
+  }
 
-    // Verifica conexão Wi-Fi — reconecta se necessário
-    if (WiFi.status() != WL_CONNECTED)
-    {
-        Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
-        conectarWiFi();
-    }
+  // Verifica conexão MQTT — reconecta se necessário
+  if (!client.connected())
+  {
+    reconnect();
+  }
 
-    // Verifica conexão MQTT — reconecta se necessário
-    if (!client.connected())
-    {
-        reconnect();
-    }
+  // Mantém a conexão MQTT ativa (processamento interno da lib)
+  client.loop();
 
-    // Mantém a conexão MQTT ativa (processamento interno da lib)
-    client.loop();
+  // Publica os dados dos sensores
+  publicarDados();
 
-    // Publica os dados dos sensores
-    publicarDados();
+  // Aguarda 5 segundos antes do próximo envio
+  delay(5000);
 
-    // Aguarda 5 segundos antes do próximo envio
-    delay(5000);
+  // 🔴 DESLIGADO
+  desligar(ledLigado);
+  delay(2000);
 
-    // 🔴 DESLIGADO
-    desligar(ledLigado);
-    delay(2000);
+  // 🟢 LIGADO - Baixa intensidade
+  ligar(ledLigado);
+  pwmManual(200, 800, 5000, ledLigado);
 
-    // 🟢 LIGADO - Baixa intensidade
+  // 🟡 Média intensidade
+  pwmManual(500, 500, 5000, ledLigado);
+
+  // 🔵 Alta intensidade
+  pwmManual(800, 200, 5000, ledLigado);
+
+  // 🔴 DESLIGA novamente
+  desligar(ledLigado);
+  delay(2000);
+
+  // ⚡ BLINK (liga/desliga)
+  for (int i = 0; i < 5; i++)
+  {
     ligar(ledLigado);
-    pwmManual(200, 800, 5000, ledLigado);
+    digitalWrite(pinoLED, HIGH);
+    delay(1000);
 
-    // 🟡 Média intensidade
-    pwmManual(500, 500, 5000, ledLigado);
-
-    // 🔵 Alta intensidade
-    pwmManual(800, 200, 5000, ledLigado);
-
-    // 🔴 DESLIGA novamente
     desligar(ledLigado);
-    delay(2000);
+    delay(1000);
+  }
+}
 
-    // ⚡ BLINK (liga/desliga)
-    for (int i = 0; i < 5; i++)
-    {
-        ligar(ledLigado);
-        digitalWrite(pinoLED, HIGH);
-        delay(1000);
+#include <Arduino.h>
+#include "deep_sleep.h"
 
-        desligar(ledLigado);
-        delay(1000);
-    }
+void setup()
+{
+  Serial.begin(115200);
+  delay(1000);
+
+  deep_sleep(5);
+}
+
+void loop()
+{
+  // Nunca será executado
 }
