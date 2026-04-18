@@ -1,2 +1,0 @@
-
-#define SEALEVELPRESSURE_HPA (1013.25)

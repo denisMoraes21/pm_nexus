@@ -6,6 +6,7 @@
 #pragma once
 
 #include <Ethernet.h>
+#include <WiFiClient.h>
 #include <PubSubClient.h>
 #include <ArduinoJson.h>
 #include "constants.h"
@@ -15,6 +16,6 @@
 namespace mqtt
 {
   void publishData(SensorAVGdata data);
-  void initMqtt();
+  void initMqtt(bool useEthernet);
   void reconnectMQTT();
 }

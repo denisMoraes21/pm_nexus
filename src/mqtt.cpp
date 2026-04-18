@@ -1,7 +1,9 @@
 #include "mqtt.h"
 
+WiFiClient wifiClient;
 EthernetClient ethClient;
-PubSubClient mqtt_client(ethClient);
+PubSubClient mqtt_client;
+
 const char *TAG_MQTT = "MQTT";
 
 void callback(char *topic, byte *payload, unsigned int length)
@@ -56,8 +58,19 @@ void mqtt::publishData(SensorAVGdata data)
     ESP_LOGI(TAG_MQTT, "Mensagem enviada: %s", payload);
 }
 
-void mqtt::initMqtt()
+void mqtt::initMqtt(bool useEthernet)
 {
+    if (useEthernet)
+    {
+        mqtt_client.setClient(ethClient);
+        ESP_LOGI(TAG_MQTT, "MQTT usando Ethernet");
+    }
+    else
+    {
+        mqtt_client.setClient(wifiClient);
+        ESP_LOGI(TAG_MQTT, "MQTT usando WiFi");
+    }
+
     mqtt_client.setServer(MQTT_SERVER, MQTT_PORT);
     mqtt_client.setCallback(callback);
 }
@@ -65,7 +78,7 @@ void mqtt::initMqtt()
 void mqtt::reconnectMQTT()
 {
     int count = 0;
-    while (!mqtt_client.connected() || count == MQTT_MAX_RETRY)
+    while (!mqtt_client.connected() && count < MQTT_MAX_RETRY)
     {
 
 #ifdef DEBUG_VALUES

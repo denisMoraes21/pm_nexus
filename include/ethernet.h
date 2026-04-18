@@ -7,5 +7,5 @@
 namespace ethernet
 {
     void generateMAC(byte mac[6]);
-    void checkEthetnet();
+    bool checkEthernet();
 }

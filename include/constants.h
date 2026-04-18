@@ -1,6 +1,7 @@
 #pragma once
 
 // Sensors definitions
+constexpr float SEALEVELPRESSURE_HPA = 1013.25;
 constexpr int sample_count = 30;
 constexpr int sample_dalay = 120000;
 constexpr int min_temperature = 18;

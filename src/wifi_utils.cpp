@@ -1,12 +1,14 @@
 #include "wifi_utils.h"
 
+const char *TAG_STA = "WiFi-STA";
+const char *TAG_AP = "WiFi-AP";
+
 void wifi::connectWiFi()
 {
-    const char *TAG = "Wi-Fi";
 
 #ifndef DEBUG_LEVEL
-    ESP_LOGI(TAG, "Wi-Fi Connection...");
-    ESP_LOGI(TAG, "SSID: %s, PASSSWORD: %s", ssid_sta, password_sta);
+    ESP_LOGI(TAG_STA, "Wi-Fi Connection...");
+    ESP_LOGI(TAG_STA, "SSID: %s, PASSSWORD: %s", ssid_sta, password_sta);
 #endif
 
     WiFi.mode(WIFI_STA);
@@ -20,7 +22,7 @@ void wifi::connectWiFi()
         delay(1000);
 
 #ifndef DEBUG_LEVEL
-        ESP_LOGI(TAG, "Connecting ...");
+        ESP_LOGI(TAG_STA, "Connecting ...");
 #endif
 
         try_connection++;
@@ -28,7 +30,7 @@ void wifi::connectWiFi()
         {
 
 #ifndef DEBUG_LEVEL
-            ESP_LOGE(TAG, "Error during Wi-Fi connection. Restarting...");
+            ESP_LOGE(TAG_STA, "Error during Wi-Fi connection. Restarting...");
 #endif
 
             ESP.restart();
@@ -36,17 +38,15 @@ void wifi::connectWiFi()
     }
 
 #ifndef DEBUG_LEVEL
-    ESP_LOGI(TAG, "Wi-Fi Connected! IP: %s ", WiFi.localIP().toString());
+    ESP_LOGI(TAG_STA, "Wi-Fi Connected! IP: %s ", WiFi.localIP().toString());
 #endif
 }
 
 void wifi::startAccessPoint()
 {
-    const char *TAG = "WiFi-AP";
-
 #ifndef DEBUG_LEVEL
-    ESP_LOGI(TAG, "Starting Access Point...");
-    ESP_LOGI(TAG, "SSID: %s, PASSWORD: %s", ssid_ap, password_ap);
+    ESP_LOGI(TAG_AP, "Starting Access Point...");
+    ESP_LOGI(TAG_AP, "SSID: %s, PASSWORD: %s", ssid_ap, password_ap);
 #endif
 
     WiFi.mode(WIFI_AP);
@@ -55,7 +55,7 @@ void wifi::startAccessPoint()
     IPAddress ip = WiFi.softAPIP();
 
 #ifndef DEBUG_LEVEL
-    ESP_LOGI(TAG, "AP Started!");
-    ESP_LOGI(TAG, "IP: %d.%d.%d.%d", ip[0], ip[1], ip[2], ip[3]);
+    ESP_LOGI(TAG_AP, "AP Started!");
+    ESP_LOGI(TAG_AP, "IP: %d.%d.%d.%d", ip[0], ip[1], ip[2], ip[3]);
 #endif
 }

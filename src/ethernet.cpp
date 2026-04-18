@@ -1,6 +1,7 @@
 #include "ethernet.h"
 
 byte mac[6];
+const char *TAG_ETH = "ETHERNET";
 
 void ethernet::generateMAC(byte mac[6])
 {
@@ -14,44 +15,41 @@ void ethernet::generateMAC(byte mac[6])
     mac[5] = random(0, 255); // New mac to shield ethernet
 }
 
-void ethernet::checkEthetnet()
+bool ethernet::checkEthernet()
 {
-    const char *TAG = "ETHERNET";
     generateMAC(mac);
     if (Ethernet.begin(mac) == 0)
     {
 
 #ifdef DEBUG_VALUES
-        ESP_LOGI(TAG, "Fail during setting Ethernet via DHCP");
+        ESP_LOGI(TAG_ETH, "Fail during setting Ethernet via DHCP");
 #endif
 
-        ESP.restart();
-        return;
+        return false;
     }
 
     if (Ethernet.linkStatus() == LinkOFF)
     {
 
 #ifdef DEBUG_VALUES
-        ESP_LOGI(TAG, "Cabo desconectado");
+        ESP_LOGI(TAG_ETH, "Cabo desconectado");
 #endif
 
-        ESP.restart();
-        return;
+        return false;
     }
 
     if (Ethernet.localIP() == IPAddress(0, 0, 0, 0))
     {
 
 #ifdef DEBUG_VALUES
-        ESP_LOGI(TAG, "Sem IP válido");
+        ESP_LOGI(TAG_ETH, "Sem IP válido");
 #endif
 
-        ESP.restart();
-        return;
+        return false;
     }
 
 #ifdef DEBUG_VALUES
-    ESP_LOGI(TAG, "Ethernet initialized!");
+    ESP_LOGI(TAG_ETH, "Ethernet initialized!");
 #endif
+    return true;
 }

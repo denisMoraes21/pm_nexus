@@ -37,10 +37,8 @@
 
 // Módulos do projeto == /include
 #include "led_function.h"
-#include "led_state.h"
 #include "pin_definition.h"
 #include "sensors.h"
-#include "temperature_definition.h"
 #include "wifi_utils.h"
 #include "mqtt.h"
 #include "ethernet.h"
@@ -54,51 +52,55 @@ bool ledLigado = false;
 
 void setup()
 {
-  Serial.begin(115200);
-  sensors::initBME250(bme);
-  sensors::initGRAVITYPM25(particle);
+    Serial.begin(115200);
+    sensors::initBME250(bme);
+    sensors::initGRAVITYPM25(particle);
 
-  bool status;
+    bool status;
 
-  pinMode(pinoLED, OUTPUT);
+    pinMode(pinoLED, OUTPUT);
 }
 
 void loop()
 {
-  SensorAVGdata data = sensors::getSensorsAvg(bme, particle);
-  ethernet::checkEthetnet();
-  mqtt::initMqtt();
-  mqtt::reconnectMQTT();
-  mqtt::publishData(data);
+    SensorAVGdata data = sensors::getSensorsAvg(bme, particle);
+    bool useEthernet = ethernet::checkEthernet();
 
-  delay(5000);
+    if (!useEthernet)
+    {
+        wifi::connectWiFi();
+    }
 
-  // // 🔴 DESLIGADO
-  // desligar(ledLigado);
-  // delay(2000);
+    mqtt::initMqtt(useEthernet);
+    mqtt::reconnectMQTT();
+    mqtt::publishData(data);
 
-  // // 🟢 LIGADO - Baixa intensidade
-  // ligar(ledLigado);
-  // pwmManual(200, 800, 5000, ledLigado);
+    // // 🔴 DESLIGADO
+    // desligar(ledLigado);
+    // delay(2000);
 
-  // // 🟡 Média intensidade
-  // pwmManual(500, 500, 5000, ledLigado);
+    // // 🟢 LIGADO - Baixa intensidade
+    // ligar(ledLigado);
+    // pwmManual(200, 800, 5000, ledLigado);
 
-  // // 🔵 Alta intensidade
-  // pwmManual(800, 200, 5000, ledLigado);
+    // // 🟡 Média intensidade
+    // pwmManual(500, 500, 5000, ledLigado);
 
-  // // 🔴 DESLIGA novamente
-  // desligar(ledLigado);
-  // delay(2000);
+    // // 🔵 Alta intensidade
+    // pwmManual(800, 200, 5000, ledLigado);
 
-  // // ⚡ BLINK (liga/desliga)
-  // for (int i = 0; i < 5; i++)
-  // {
-  //   ligar(ledLigado);
-  //   digitalWrite(pinoLED, HIGH);
-  //   delay(1000);
+    // // 🔴 DESLIGA novamente
+    // desligar(ledLigado);
+    // delay(2000);
 
-  //   desligar(ledLigado);
-  //   delay(1000);
-  // }
+    // // ⚡ BLINK (liga/desliga)
+    // for (int i = 0; i < 5; i++)
+    // {
+    //   ligar(ledLigado);
+    //   digitalWrite(pinoLED, HIGH);
+    //   delay(1000);
+
+    //   desligar(ledLigado);
+    //   delay(1000);
+    // }
 }
