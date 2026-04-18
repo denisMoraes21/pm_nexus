@@ -29,6 +29,28 @@ void ethernet::checkEthetnet()
         return;
     }
 
+    if (Ethernet.linkStatus() == LinkOFF)
+    {
+
+#ifdef DEBUG_VALUES
+        ESP_LOGI(TAG, "Cabo desconectado");
+#endif
+
+        ESP.restart();
+        return;
+    }
+
+    if (Ethernet.localIP() == IPAddress(0, 0, 0, 0))
+    {
+
+#ifdef DEBUG_VALUES
+        ESP_LOGI(TAG, "Sem IP válido");
+#endif
+
+        ESP.restart();
+        return;
+    }
+
 #ifdef DEBUG_VALUES
     ESP_LOGI(TAG, "Ethernet initialized!");
 #endif

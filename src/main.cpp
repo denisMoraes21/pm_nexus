@@ -38,13 +38,11 @@
 // Módulos do projeto == /include
 #include "led_function.h"
 #include "led_state.h"
-#include "mqtt.h"
 #include "pin_definition.h"
 #include "sensors.h"
 #include "temperature_definition.h"
 #include "wifi_utils.h"
-#include "public_dados.h"
-#include "WiFi_reconnect.h"
+#include "mqtt.h"
 #include "ethernet.h"
 
 // Instâncias de sensores
@@ -69,24 +67,11 @@ void loop()
 {
   SensorAVGdata data = sensors::getSensorsAvg(bme, particle);
   ethernet::checkEthetnet();
+  mqtt::initMqtt();
+  mqtt::reconnectMQTT();
+  mqtt::publishData(data);
 
   delay(5000);
-
-  // client.setServer(mqtt_server, mqtt_port);
-
-
-
-  // if (!client.connected())
-  // {
-  //   reconnect();
-  // }
-
-  // client.loop();
-
-  // publicarDados();
-
-  // // Aguarda 5 segundos antes do próximo envio
-  // delay(5000);
 
   // // 🔴 DESLIGADO
   // desligar(ledLigado);

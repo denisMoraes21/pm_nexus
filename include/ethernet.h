@@ -1,3 +1,5 @@
+#pragma once
+
 #include <SPI.h>
 #include <Ethernet.h>
 #include "esp_log.h"

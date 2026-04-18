@@ -1,5 +1,20 @@
-// --- [3] CONFIGURAÇÕES DO BROKER MQTT ---
-const char* mqtt_server = "192.168.137.35"; // Broker público
-const int   mqtt_port   = 1883;                // Porta padrão MQTT
-const char* mqtt_topic  = "esp32/teste";    // Tópico de publicação
-const char* client_id   = "ESP32Client_Sensor"; // ID único do cliente
+// ============================================================
+// FUNÇÃO: publicarDados()
+// Monta o payload JSON e publica no tópico MQTT
+// ============================================================
+
+#pragma once
+
+#include <Ethernet.h>
+#include <PubSubClient.h>
+#include <ArduinoJson.h>
+#include "constants.h"
+#include "esp_log.h"
+#include "sensors.h"
+
+namespace mqtt
+{
+  void publishData(SensorAVGdata data);
+  void initMqtt();
+  void reconnectMQTT();
+}
