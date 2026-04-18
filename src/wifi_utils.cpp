@@ -3,8 +3,11 @@
 void wifi::connectWiFi()
 {
     const char *TAG = "Wi-Fi";
+
+#ifndef DEBUG_LEVEL
     ESP_LOGI(TAG, "Wi-Fi Connection...");
     ESP_LOGI(TAG, "SSID: %s, PASSSWORD: %s", ssid_sta, password_sta);
+#endif
 
     WiFi.mode(WIFI_STA);
     WiFi.disconnect();
@@ -15,30 +18,44 @@ void wifi::connectWiFi()
     while (WiFi.status() != WL_CONNECTED)
     {
         delay(1000);
+
+#ifndef DEBUG_LEVEL
         ESP_LOGI(TAG, "Connecting ...");
+#endif
+
         try_connection++;
         if (try_connection > try_connection_seconds)
         {
+
+#ifndef DEBUG_LEVEL
             ESP_LOGE(TAG, "Error during Wi-Fi connection. Restarting...");
+#endif
+
             ESP.restart();
         }
     }
 
+#ifndef DEBUG_LEVEL
     ESP_LOGI(TAG, "Wi-Fi Connected! IP: %s ", WiFi.localIP().toString());
+#endif
 }
 
 void wifi::startAccessPoint()
 {
     const char *TAG = "WiFi-AP";
 
+#ifndef DEBUG_LEVEL
     ESP_LOGI(TAG, "Starting Access Point...");
     ESP_LOGI(TAG, "SSID: %s, PASSWORD: %s", ssid_ap, password_ap);
+#endif
 
     WiFi.mode(WIFI_AP);
     WiFi.softAP(ssid_ap, password_ap);
 
     IPAddress ip = WiFi.softAPIP();
 
+#ifndef DEBUG_LEVEL
     ESP_LOGI(TAG, "AP Started!");
     ESP_LOGI(TAG, "IP: %d.%d.%d.%d", ip[0], ip[1], ip[2], ip[3]);
+#endif
 }

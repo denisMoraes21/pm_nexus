@@ -66,19 +66,23 @@ GRAVITYPM25data sensors::getGRAVITYPM25values(DFRobot_AirQualitySensor &particle
 
 void sensors::printBME250Values(BME250data data)
 {
+#ifdef DEBUG_VALUES
     const char *TAG = "BOSCH";
     ESP_LOGI(TAG, "Temperature = %.2f °C", data.temp);
     ESP_LOGI(TAG, "Pressure = %.2f hPa", data.press);
     ESP_LOGI(TAG, "Altitude = %.2f m", data.alt);
     ESP_LOGI(TAG, "Humidity = %.2f %%", data.humid);
+#endif
 }
 
 void sensors::printGRAVITYPM25Values(GRAVITYPM25data data)
 {
+#ifdef DEBUG_VALUES
     const char *TAG = "DFROBOT";
     ESP_LOGI(TAG, "PM1.0 = %.2f ug/m3", data.pm1);
     ESP_LOGI(TAG, "PM2.5 = %.2f ug/m3", data.pm25);
     ESP_LOGI(TAG, "PM10 = %.2f ug/m3", data.pm10);
+#endif
 }
 
 float sensors::getAvgInt(const std::vector<int> &list_values)
@@ -151,7 +155,7 @@ SensorAVGdata sensors::getSensorsAvg(Adafruit_BME280 &bme, DFRobot_AirQualitySen
                 particle_values_25.push_back(pm_25);
                 particle_values_10.push_back(pm_10);
 
-#ifndef SLEEP_MODE
+#ifndef SLEEPING_MODE
                 sleep_mode::deep_sleep(sample_dalay);
 #else
                 delay(sample_dalay);

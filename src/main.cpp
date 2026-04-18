@@ -36,7 +36,6 @@
 #include <Wire.h>
 
 // Módulos do projeto == /include
-#include "sleep.h"
 #include "led_function.h"
 #include "led_state.h"
 #include "mqtt.h"
@@ -46,9 +45,7 @@
 #include "wifi_utils.h"
 #include "public_dados.h"
 #include "WiFi_reconnect.h"
-
-#include "DFRobot_AirQualitySensor.h"
-#include <Adafruit_BME280.h>
+#include "ethernet.h"
 
 // Instâncias de sensores
 DFRobot_AirQualitySensor particle(&Wire);
@@ -66,35 +63,26 @@ void setup()
   bool status;
 
   pinMode(pinoLED, OUTPUT);
-  // deep_sleep(5);
 }
 
 void loop()
 {
   SensorAVGdata data = sensors::getSensorsAvg(bme, particle);
+  ethernet::checkEthetnet();
 
   delay(5000);
 
-  // conectarWiFi();
   // client.setServer(mqtt_server, mqtt_port);
 
-  // // Verifica conexão Wi-Fi — reconecta se necessário
-  // if (WiFi.status() != WL_CONNECTED)
-  // {
-  //   Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
-  //   conectarWiFi();
-  // }
 
-  // // Verifica conexão MQTT — reconecta se necessário
+
   // if (!client.connected())
   // {
   //   reconnect();
   // }
 
-  // // Mantém a conexão MQTT ativa (processamento interno da lib)
   // client.loop();
 
-  // // Publica os dados dos sensores
   // publicarDados();
 
   // // Aguarda 5 segundos antes do próximo envio
