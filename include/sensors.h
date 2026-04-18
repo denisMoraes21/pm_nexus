@@ -6,6 +6,7 @@
 #include <vector>
 #include "esp_log.h"
 #include "constants.h"
+#include "sleep.h"
 
 struct BME250data
 {

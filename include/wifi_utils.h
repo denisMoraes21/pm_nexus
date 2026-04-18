@@ -6,6 +6,8 @@
 // Módulos do projeto == /include
 #include "constants.h"
 
-void connectWiFi();
-
-void startAccessPoint();
+namespace wifi
+{
+    void connectWiFi();
+    void startAccessPoint();
+}

@@ -36,7 +36,7 @@
 #include <Wire.h>
 
 // Módulos do projeto == /include
-#include "deep_sleep.h"
+#include "sleep.h"
 #include "led_function.h"
 #include "led_state.h"
 #include "mqtt.h"

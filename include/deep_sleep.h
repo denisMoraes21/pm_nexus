@@ -1,1 +1,0 @@
-void deep_sleep(int TEMPO_SLEEP);

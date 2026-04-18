@@ -1,6 +1,6 @@
 #include "wifi_utils.h"
 
-void connectWiFi()
+void wifi::connectWiFi()
 {
     const char *TAG = "Wi-Fi";
     ESP_LOGI(TAG, "Wi-Fi Connection...");
@@ -27,7 +27,7 @@ void connectWiFi()
     ESP_LOGI(TAG, "Wi-Fi Connected! IP: %s ", WiFi.localIP().toString());
 }
 
-void startAccessPoint()
+void wifi::startAccessPoint()
 {
     const char *TAG = "WiFi-AP";
 

@@ -151,7 +151,11 @@ SensorAVGdata sensors::getSensorsAvg(Adafruit_BME280 &bme, DFRobot_AirQualitySen
                 particle_values_25.push_back(pm_25);
                 particle_values_10.push_back(pm_10);
 
+#ifndef SLEEP_MODE
+                sleep_mode::deep_sleep(sample_dalay);
+#else
                 delay(sample_dalay);
+#endif
             }
         }
     }
