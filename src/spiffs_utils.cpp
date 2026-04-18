@@ -1,6 +1,5 @@
 #include "spiffs_utils.h"
 
-
 inline bool criarArquivo(const char *nome, const char *conteudo)
 {
   if (!nome || nome[0] == '\0')

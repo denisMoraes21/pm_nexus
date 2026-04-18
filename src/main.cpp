@@ -33,7 +33,6 @@
 #include <ArduinoJson.h>
 #include <DFRobot_AirQualitySensor.h>
 #include <PubSubClient.h>
-#include <WiFi.h>
 #include <Wire.h>
 
 // Módulos do projeto == /include
@@ -44,8 +43,7 @@
 #include "pin_definition.h"
 #include "sensors.h"
 #include "temperature_definition.h"
-#include "wifi_config.h"
-#include "WiFi_Client.h"
+#include "wifi_utils.h"
 #include "public_dados.h"
 #include "WiFi_reconnect.h"
 
@@ -62,109 +60,72 @@ bool ledLigado = false;
 void setup()
 {
   Serial.begin(115200);
-
-  bool status;
-
   sensors::initBME250(bme);
   sensors::initGRAVITYPM25(particle);
 
+  bool status;
+
   pinMode(pinoLED, OUTPUT);
-  deep_sleep(5);
+  // deep_sleep(5);
 }
 
 void loop()
 {
-  std::vector<float> temp_values;
-  std::vector<float> humid_values;
-  std::vector<int> particle_values_1;
-  std::vector<int> particle_values_25;
-  std::vector<int> particle_values_10;
+  SensorAVGdata data = sensors::getSensorsAvg(bme, particle);
 
-  for (int i = 0; i < 30; i++)
-  {
-    BME250data bme_250_data = sensors::getBME250values(bme);
-    sensors::printBME250Values(bme_250_data);
-
-    const float temperature = bme_250_data.temp;
-    const float humidity = bme_250_data.humid;
-
-    // Temperatura e umidade está dentro da spec?
-    if (temperature > 0 && temperature < 50 && humidity < 95)
-    {
-      GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
-      sensors::printGRAVITYPM25Values(particule_data);
-
-      // Quantidade de particulas está dentro da spec?
-
-      const int pm_1 = particule_data.pm1;
-      const int pm_25 = particule_data.pm25;
-      const int pm_10 = particule_data.pm10;
-
-      temp_values.push_back(temperature);
-      humid_values.push_back(humidity);
-      particle_values_1.push_back(pm_1);
-      particle_values_25.push_back(pm_25);
-      particle_values_10.push_back(pm_10);
-    }
-  }
-
-  float temp = sensors::getAvgFloat(temp_values);
-  float humid = sensors::getAvgFloat(humid_values);
-  float particle_1 = sensors::getAvgInt(particle_values_1);
-  float particule_25 = sensors::getAvgInt(particle_values_25);
-  float particule_10 = sensors::getAvgInt(particle_values_10);
-
-  conectarWiFi();
-  client.setServer(mqtt_server, mqtt_port);
-
-  // Verifica conexão Wi-Fi — reconecta se necessário
-  if (WiFi.status() != WL_CONNECTED)
-  {
-    Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
-    conectarWiFi();
-  }
-
-  // Verifica conexão MQTT — reconecta se necessário
-  if (!client.connected())
-  {
-    reconnect();
-  }
-
-  // Mantém a conexão MQTT ativa (processamento interno da lib)
-  client.loop();
-
-  // Publica os dados dos sensores
-  publicarDados();
-
-  // Aguarda 5 segundos antes do próximo envio
   delay(5000);
 
-  // 🔴 DESLIGADO
-  desligar(ledLigado);
-  delay(2000);
+  // conectarWiFi();
+  // client.setServer(mqtt_server, mqtt_port);
 
-  // 🟢 LIGADO - Baixa intensidade
-  ligar(ledLigado);
-  pwmManual(200, 800, 5000, ledLigado);
+  // // Verifica conexão Wi-Fi — reconecta se necessário
+  // if (WiFi.status() != WL_CONNECTED)
+  // {
+  //   Serial.println("[AVISO] Wi-Fi perdido. Reconectando...");
+  //   conectarWiFi();
+  // }
 
-  // 🟡 Média intensidade
-  pwmManual(500, 500, 5000, ledLigado);
+  // // Verifica conexão MQTT — reconecta se necessário
+  // if (!client.connected())
+  // {
+  //   reconnect();
+  // }
 
-  // 🔵 Alta intensidade
-  pwmManual(800, 200, 5000, ledLigado);
+  // // Mantém a conexão MQTT ativa (processamento interno da lib)
+  // client.loop();
 
-  // 🔴 DESLIGA novamente
-  desligar(ledLigado);
-  delay(2000);
+  // // Publica os dados dos sensores
+  // publicarDados();
 
-  // ⚡ BLINK (liga/desliga)
-  for (int i = 0; i < 5; i++)
-  {
-    ligar(ledLigado);
-    digitalWrite(pinoLED, HIGH);
-    delay(1000);
+  // // Aguarda 5 segundos antes do próximo envio
+  // delay(5000);
 
-    desligar(ledLigado);
-    delay(1000);
-  }
+  // // 🔴 DESLIGADO
+  // desligar(ledLigado);
+  // delay(2000);
+
+  // // 🟢 LIGADO - Baixa intensidade
+  // ligar(ledLigado);
+  // pwmManual(200, 800, 5000, ledLigado);
+
+  // // 🟡 Média intensidade
+  // pwmManual(500, 500, 5000, ledLigado);
+
+  // // 🔵 Alta intensidade
+  // pwmManual(800, 200, 5000, ledLigado);
+
+  // // 🔴 DESLIGA novamente
+  // desligar(ledLigado);
+  // delay(2000);
+
+  // // ⚡ BLINK (liga/desliga)
+  // for (int i = 0; i < 5; i++)
+  // {
+  //   ligar(ledLigado);
+  //   digitalWrite(pinoLED, HIGH);
+  //   delay(1000);
+
+  //   desligar(ledLigado);
+  //   delay(1000);
+  // }
 }
