@@ -37,6 +37,7 @@
 #include <Wire.h>
 
 // Módulos do projeto == /include
+#include "deep_sleep.h"
 #include "led_function.h"
 #include "led_state.h"
 #include "mqtt.h"
@@ -68,6 +69,7 @@ void setup()
   sensors::initGRAVITYPM25(particle);
 
   pinMode(pinoLED, OUTPUT);
+  deep_sleep(5);
 }
 
 void loop()
@@ -165,20 +167,4 @@ void loop()
     desligar(ledLigado);
     delay(1000);
   }
-}
-
-#include <Arduino.h>
-#include "deep_sleep.h"
-
-void setup()
-{
-  Serial.begin(115200);
-  delay(1000);
-
-  deep_sleep(5);
-}
-
-void loop()
-{
-  // Nunca será executado
 }
