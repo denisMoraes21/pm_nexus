@@ -26,44 +26,41 @@
  * @note        Configurações definidas em platformio.ini
  **/
 
-// Bibliotecas externas == /lib
-#include <Adafruit_Sensor.h>
-#include <Adafruit_BME280.h>
 #include <Arduino.h>
-#include <ArduinoJson.h>
-#include <DFRobot_AirQualitySensor.h>
-#include <PubSubClient.h>
-#include <Wire.h>
 
 // Módulos do projeto == /include
-#include "led_function.h"
-#include "pin_definition.h"
+#include "led.h"
 #include "sensors.h"
 #include "wifi_utils.h"
 #include "mqtt.h"
 #include "ethernet.h"
-
-// Instâncias de sensores
-DFRobot_AirQualitySensor particle(&Wire);
-Adafruit_BME280 bme;
-
-// Estado do LED
-bool ledLigado = false;
+#include "led.h"
+#include "spiffs_utils.h"
+#include "web_server.h"
 
 void setup()
 {
     Serial.begin(115200);
-    sensors::initBME250(bme);
-    sensors::initGRAVITYPM25(particle);
-
-    bool status;
-
-    pinMode(pinoLED, OUTPUT);
+    sensors::initBME250();
+    sensors::initGRAVITYPM25();
+    led::initLed();
 }
+
+// TODO Add hard reset (button and delete config file)
+// TODO Add config page costumization
 
 void loop()
 {
-    SensorAVGdata data = sensors::getSensorsAvg(bme, particle);
+    led::ledON();
+    if (!spi_ffs::settingsFileExists())
+    {
+        wifi::startAccessPoint();
+        web_server_esp::initWebServer();
+        while (1)
+            ;
+    }
+
+    SensorAVGdata data = sensors::getSensorsAvg();
     bool useEthernet = ethernet::checkEthernet();
 
     if (!useEthernet)
@@ -71,36 +68,11 @@ void loop()
         wifi::connectWiFi();
     }
 
+    led::blink(BLINK_LED_TIME);
     mqtt::initMqtt(useEthernet);
+    led::blink(BLINK_LED_TIME);
     mqtt::reconnectMQTT();
+    led::blink(BLINK_LED_TIME);
     mqtt::publishData(data);
-
-    // // 🔴 DESLIGADO
-    // desligar(ledLigado);
-    // delay(2000);
-
-    // // 🟢 LIGADO - Baixa intensidade
-    // ligar(ledLigado);
-    // pwmManual(200, 800, 5000, ledLigado);
-
-    // // 🟡 Média intensidade
-    // pwmManual(500, 500, 5000, ledLigado);
-
-    // // 🔵 Alta intensidade
-    // pwmManual(800, 200, 5000, ledLigado);
-
-    // // 🔴 DESLIGA novamente
-    // desligar(ledLigado);
-    // delay(2000);
-
-    // // ⚡ BLINK (liga/desliga)
-    // for (int i = 0; i < 5; i++)
-    // {
-    //   ligar(ledLigado);
-    //   digitalWrite(pinoLED, HIGH);
-    //   delay(1000);
-
-    //   desligar(ledLigado);
-    //   delay(1000);
-    // }
+    led::blink(BLINK_LED_TIME);
 }

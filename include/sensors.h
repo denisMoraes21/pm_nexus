@@ -36,13 +36,13 @@ struct SensorAVGdata
 
 namespace sensors
 {
-    void initBME250(Adafruit_BME280 &bme);
-    void initGRAVITYPM25(DFRobot_AirQualitySensor &particle);
-    BME250data getBME250values(Adafruit_BME280 &bme);
-    GRAVITYPM25data getGRAVITYPM25values(DFRobot_AirQualitySensor &particle);
-    void printBME250Values(BME250data data);
-    void printGRAVITYPM25Values(GRAVITYPM25data data);
+    void initBME250();
+    void initGRAVITYPM25();
+    BME250data getBME250values();
+    GRAVITYPM25data getGRAVITYPM25values();
+    void printBME250Values(BME250data bme_250_data);
+    void printGRAVITYPM25Values(GRAVITYPM25data particule_data);
     float getAvgInt(const std::vector<int> &list_values);
     float getAvgFloat(const std::vector<float> &list_values);
-    SensorAVGdata getSensorsAvg(Adafruit_BME280 &bme, DFRobot_AirQualitySensor &particle);
+    SensorAVGdata getSensorsAvg();
 }

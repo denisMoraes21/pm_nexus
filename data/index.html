@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Configuração</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h2>Configurar Dispositivo</h2>
+
+    <form action="/config" method="POST">
+        <label>SSID:</label><br>
+        <input type="text" name="ssid"><br><br>
+
+        <label>Senha:</label><br>
+        <input type="password" name="password"><br><br>
+
+        <label>MQTT Server:</label><br>
+        <input type="text" name="mqtt"><br><br>
+
+        <input type="submit" value="Salvar">
+    </form>
+</body>
+
+</html>

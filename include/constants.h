@@ -30,3 +30,9 @@ constexpr const char *MQTT_TOPIC_SUB = "esp32/test/sub";
 constexpr const char *MQTT_CLIENT_ID = "PM_NEXUS_";
 constexpr int MQTT_TIME_RECONNECT = 5000;
 constexpr int MQTT_MAX_RETRY = 5;
+
+constexpr const int PINO_LED = 23;
+constexpr const int BLINK_LED_TIME = 4;
+
+// Settings file
+constexpr const char *CONFIG_FILE = "PM_NEXUS_CONFIG.json";

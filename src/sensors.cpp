@@ -1,6 +1,12 @@
 #include "sensors.h"
 
-void sensors::initBME250(Adafruit_BME280 &bme)
+DFRobot_AirQualitySensor particle(&Wire);
+Adafruit_BME280 bme;
+
+const char *TAG_TEMP = "BOSCH";
+const char *TAG_AIR = "DFROBOT";
+
+void sensors::initBME250()
 {
 #ifndef ENABLE_SENSORS
     status = bme.begin();
@@ -13,7 +19,7 @@ void sensors::initBME250(Adafruit_BME280 &bme)
 #endif
 }
 
-void sensors::initGRAVITYPM25(DFRobot_AirQualitySensor &particle)
+void sensors::initGRAVITYPM25()
 {
 #ifndef ENABLE_SENSORS
     while (!particle.begin())
@@ -26,7 +32,7 @@ void sensors::initGRAVITYPM25(DFRobot_AirQualitySensor &particle)
 #endif
 }
 
-BME250data sensors::getBME250values(Adafruit_BME280 &bme)
+BME250data sensors::getBME250values()
 {
 
     BME250data data;
@@ -46,7 +52,7 @@ BME250data sensors::getBME250values(Adafruit_BME280 &bme)
     return data;
 }
 
-GRAVITYPM25data sensors::getGRAVITYPM25values(DFRobot_AirQualitySensor &particle)
+GRAVITYPM25data sensors::getGRAVITYPM25values()
 {
 
     GRAVITYPM25data data;
@@ -67,21 +73,19 @@ GRAVITYPM25data sensors::getGRAVITYPM25values(DFRobot_AirQualitySensor &particle
 void sensors::printBME250Values(BME250data data)
 {
 #ifdef DEBUG_VALUES
-    const char *TAG = "BOSCH";
-    ESP_LOGI(TAG, "Temperature = %.2f °C", data.temp);
-    ESP_LOGI(TAG, "Pressure = %.2f hPa", data.press);
-    ESP_LOGI(TAG, "Altitude = %.2f m", data.alt);
-    ESP_LOGI(TAG, "Humidity = %.2f %%", data.humid);
+    ESP_LOGI(TAG_TEMP, "Temperature = %.2f °C", data.temp);
+    ESP_LOGI(TAG_TEMP, "Pressure = %.2f hPa", data.press);
+    ESP_LOGI(TAG_TEMP, "Altitude = %.2f m", data.alt);
+    ESP_LOGI(TAG_TEMP, "Humidity = %.2f %%", data.humid);
 #endif
 }
 
 void sensors::printGRAVITYPM25Values(GRAVITYPM25data data)
 {
 #ifdef DEBUG_VALUES
-    const char *TAG = "DFROBOT";
-    ESP_LOGI(TAG, "PM1.0 = %.2f ug/m3", data.pm1);
-    ESP_LOGI(TAG, "PM2.5 = %.2f ug/m3", data.pm25);
-    ESP_LOGI(TAG, "PM10 = %.2f ug/m3", data.pm10);
+    ESP_LOGI(TAG_AIR, "PM1.0 = %.2f ug/m3", data.pm1);
+    ESP_LOGI(TAG_AIR, "PM2.5 = %.2f ug/m3", data.pm25);
+    ESP_LOGI(TAG_AIR, "PM10 = %.2f ug/m3", data.pm10);
 #endif
 }
 
@@ -117,7 +121,7 @@ float sensors::getAvgFloat(const std::vector<float> &list_values)
     return avg;
 }
 
-SensorAVGdata sensors::getSensorsAvg(Adafruit_BME280 &bme, DFRobot_AirQualitySensor &particle)
+SensorAVGdata sensors::getSensorsAvg()
 {
     std::vector<float> temp_values;
     std::vector<float> humid_values;
@@ -127,7 +131,7 @@ SensorAVGdata sensors::getSensorsAvg(Adafruit_BME280 &bme, DFRobot_AirQualitySen
 
     for (int i = 0; i < sample_count; i++)
     {
-        BME250data bme_250_data = sensors::getBME250values(bme);
+        BME250data bme_250_data = sensors::getBME250values();
         sensors::printBME250Values(bme_250_data);
 
         const float temperature = bme_250_data.temp;
@@ -138,7 +142,7 @@ SensorAVGdata sensors::getSensorsAvg(Adafruit_BME280 &bme, DFRobot_AirQualitySen
             (temperature > min_temperature && temperature < max_temperature) &&
             (humidity > min_humidity && humidity < max_humidity))
         {
-            GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values(particle);
+            GRAVITYPM25data particule_data = sensors::getGRAVITYPM25values();
             sensors::printGRAVITYPM25Values(particule_data);
 
             const int pm_1 = particule_data.pm1;

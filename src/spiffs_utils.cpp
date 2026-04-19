@@ -1,25 +1,67 @@
 #include "spiffs_utils.h"
 
-inline bool criarArquivo(const char *nome, const char *conteudo)
+const char *TAG_SPIFFS = "SPIFFS";
+
+bool spi_ffs::settingsFileExists()
 {
+  if (!SPIFFS.begin(true))
+  {
+
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_SPIFFS, "Error during mount SPIFFS");
+#endif
+
+    ESP.restart();
+    return false;
+  }
+  String path = "/" + String(CONFIG_FILE);
+
+  if (SPIFFS.exists(path))
+  {
+
+#ifdef DEBUG_VALUES
+    ESP_LOGI(TAG_SPIFFS, "%s exists", path);
+#endif
+    return true;
+  }
+
+#ifdef DEBUG_VALUES
+  ESP_LOGE(TAG_SPIFFS, "%s not exists", path);
+#endif
+  return false;
+}
+
+bool spi_ffs::createFile(const char *conteudo)
+{
+  const char *nome = CONFIG_FILE;
   if (!nome || nome[0] == '\0')
   {
-    Serial.println(F("  [ERRO] Nome invalido."));
+
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_SPIFFS, "Invalid name!");
+#endif
+
     return false;
   }
 
   if (!conteudo)
   {
-    Serial.println(F("  [ERRO] Conteudo nulo."));
+
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_SPIFFS, "Null content!");
+#endif
+
     return false;
   }
 
   File f = SPIFFS.open(nome, "w");
   if (!f)
   {
-    Serial.print(F("  [ERRO] Nao foi possivel criar '"));
-    Serial.print(nome);
-    Serial.println(F("'."));
+
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_SPIFFS, "Not possible create file! %s", nome);
+#endif
+
     return false;
   }
 
@@ -28,138 +70,40 @@ inline bool criarArquivo(const char *nome, const char *conteudo)
 
   if (n == 0 && strlen(conteudo) > 0)
   {
-    Serial.println(F("  [AVISO] Nenhum byte gravado (flash cheia?)."));
+
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_SPIFFS, "None writed (Is flash memory full?)");
+#endif
+
     return false;
   }
 
   return true;
 }
 
-inline bool editarArquivo(const char *nome, const char *novoConteudo, uint8_t modo)
-{
-  if (!nome || nome[0] == '\0')
-  {
-    Serial.println(F("  [ERRO] Nome invalido."));
-    return false;
-  }
+// inline bool apagarArquivo(const char *nome)
+// {
+//   if (!nome || nome[0] == '\0')
+//   {
+//     Serial.println(F("  [ERRO] Nome invalido."));
+//     return false;
+//   }
 
-  if (!novoConteudo)
-  {
-    Serial.println(F("  [ERRO] Conteudo nulo."));
-    return false;
-  }
+//   if (!SPIFFS.exists(nome))
+//   {
+//     Serial.print(F("  [ERRO] Arquivo '"));
+//     Serial.print(nome);
+//     Serial.println(F("' nao existe."));
+//     return false;
+//   }
 
-  if (!SPIFFS.exists(nome))
-  {
-    Serial.print(F("  [ERRO] Arquivo '"));
-    Serial.print(nome);
-    Serial.println(F("' nao encontrado."));
-    return false;
-  }
+//   if (!SPIFFS.remove(nome))
+//   {
+//     Serial.print(F("  [ERRO] Falha ao remover '"));
+//     Serial.print(nome);
+//     Serial.println(F("'."));
+//     return false;
+//   }
 
-  if (modo == MODO_ACRESCENTAR)
-  {
-    File f = SPIFFS.open(nome, "a");
-    if (!f)
-    {
-      Serial.print(F("  [ERRO] Nao foi possivel abrir '"));
-      Serial.print(nome);
-      Serial.println(F("' para append."));
-      return false;
-    }
-
-    size_t n = f.print(novoConteudo);
-    f.close();
-
-    if (n == 0 && strlen(novoConteudo) > 0)
-    {
-      Serial.println(F("  [AVISO] Nenhum byte acrescentado (flash cheia?)."));
-      return false;
-    }
-
-    return true;
-  }
-
-  if (modo == MODO_SOBRESCREVER)
-  {
-    File f = SPIFFS.open(nome, "w");
-    if (!f)
-    {
-      Serial.print(F("  [ERRO] Nao foi possivel abrir '"));
-      Serial.print(nome);
-      Serial.println(F("' para sobrescrita."));
-      return false;
-    }
-
-    size_t n = f.print(novoConteudo);
-    f.close();
-
-    if (n == 0 && strlen(novoConteudo) > 0)
-    {
-      Serial.println(F("  [AVISO] Nenhum byte gravado (flash cheia?)."));
-      return false;
-    }
-
-    return true;
-  }
-
-  Serial.print(F("  [ERRO] Modo invalido: "));
-  Serial.println(modo);
-  return false;
-}
-
-inline bool apagarArquivo(const char *nome)
-{
-  if (!nome || nome[0] == '\0')
-  {
-    Serial.println(F("  [ERRO] Nome invalido."));
-    return false;
-  }
-
-  if (!SPIFFS.exists(nome))
-  {
-    Serial.print(F("  [ERRO] Arquivo '"));
-    Serial.print(nome);
-    Serial.println(F("' nao existe."));
-    return false;
-  }
-
-  if (!SPIFFS.remove(nome))
-  {
-    Serial.print(F("  [ERRO] Falha ao remover '"));
-    Serial.print(nome);
-    Serial.println(F("'."));
-    return false;
-  }
-
-  return true;
-}
-
-inline void lerArquivo(const char *nome)
-{
-  if (!SPIFFS.exists(nome))
-  {
-    Serial.println(F("  [Arquivo nao encontrado]"));
-    return;
-  }
-
-  File f = SPIFFS.open(nome, "r");
-  if (!f)
-  {
-    Serial.println(F("  [Erro ao abrir para leitura]"));
-    return;
-  }
-
-  Serial.println(F("  -- conteudo --"));
-  while (f.available())
-  {
-    Serial.write(f.read());
-  }
-  Serial.println(F("  --------------"));
-  f.close();
-}
-
-inline void sep()
-{
-  Serial.println(F("------------------------------------"));
-}
+//   return true;
+// }
