@@ -26,17 +26,7 @@
  * @note        Configurações definidas em platformio.ini
  **/
 
-#include <Arduino.h>
-
-// Módulos do projeto == /include
-#include "led.h"
-#include "sensors.h"
-#include "wifi_utils.h"
-#include "mqtt.h"
-#include "ethernet.h"
-#include "led.h"
-#include "spiffs_utils.h"
-#include "web_server.h"
+#include "import_libs.h"
 
 void setup()
 {
@@ -55,6 +45,7 @@ void loop()
     if (!spi_ffs::settingsFileExists())
     {
         wifi::startAccessPoint();
+        dns::initDNS();
         web_server_esp::initWebServer();
         while (1)
             ;

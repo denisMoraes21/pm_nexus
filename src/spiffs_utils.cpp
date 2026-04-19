@@ -20,20 +20,21 @@ bool spi_ffs::settingsFileExists()
   {
 
 #ifdef DEBUG_VALUES
-    ESP_LOGI(TAG_SPIFFS, "%s exists", path);
+    ESP_LOGI(TAG_SPIFFS, "%s exists", path.c_str());
 #endif
     return true;
   }
 
 #ifdef DEBUG_VALUES
-  ESP_LOGE(TAG_SPIFFS, "%s not exists", path);
+  ESP_LOGE(TAG_SPIFFS, "%s not exists", path.c_str());
 #endif
   return false;
 }
 
 bool spi_ffs::createFile(const char *conteudo)
 {
-  const char *nome = CONFIG_FILE;
+  String path = "/" + String(CONFIG_FILE);
+  const char *nome = path.c_str();
   if (!nome || nome[0] == '\0')
   {
 

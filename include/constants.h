@@ -12,12 +12,12 @@ constexpr int min_pm_25 = 0;
 constexpr int max_pm_25 = 12;
 
 // Wi-Fi Station credentials
-constexpr const char *ssid_sta = "Aula";
-constexpr const char *password_sta = "20802080";
+constexpr const char *SSID_STA = "Aula";
+constexpr const char *PASSWORD_STA = "20802080";
 
 // Wi-Fi Access Point credentials
-constexpr const char *ssid_ap = "Aula";
-constexpr const char *password_ap = "20802080";
+constexpr const char *SSID_AP = "PM_NEXUS";
+constexpr const char *PASSWORD_AP = "20802080";
 constexpr int try_connection_seconds = 40;
 
 // MQTT credentials

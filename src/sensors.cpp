@@ -16,6 +16,10 @@ void sensors::initBME250()
         while (1)
             ;
     }
+#else
+#ifdef DEBUG_VALUES
+    ESP_LOGI(TAG_TEMP, "Sensor not inialized! Fake values will be used..");
+#endif
 #endif
 }
 
@@ -24,11 +28,23 @@ void sensors::initGRAVITYPM25()
 #ifndef ENABLE_SENSORS
     while (!particle.begin())
     {
-        Serial.println("NO Deivces !");
+
+#ifdef DEBUG_VALUES
+        ESP_LOGE(TAG_AIR, "NO Deivces !");
+#endif
+
         delay(1000);
     }
-    Serial.println("sensor begin success!");
+
+#ifdef DEBUG_VALUES
+    ESP_LOGI(TAG_AIR, "Sensor begin success!");
+#endif
+
     delay(1000);
+#else
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_AIR, "Sensor not inialized! Fake values will be used...");
+#endif
 #endif
 }
 

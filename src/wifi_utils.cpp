@@ -8,13 +8,13 @@ void wifi::connectWiFi()
 
 #ifndef DEBUG_LEVEL
     ESP_LOGI(TAG_STA, "Wi-Fi Connection...");
-    ESP_LOGI(TAG_STA, "SSID: %s, PASSSWORD: %s", ssid_sta, password_sta);
+    ESP_LOGI(TAG_STA, "SSID: %s, PASSSWORD: %s", SSID_STA, PASSWORD_STA);
 #endif
 
     WiFi.mode(WIFI_STA);
     WiFi.disconnect();
 
-    WiFi.begin(ssid_sta, password_sta);
+    WiFi.begin(SSID_STA, PASSWORD_STA);
 
     int try_connection = 0;
     while (WiFi.status() != WL_CONNECTED)
@@ -46,11 +46,11 @@ void wifi::startAccessPoint()
 {
 #ifndef DEBUG_LEVEL
     ESP_LOGI(TAG_AP, "Starting Access Point...");
-    ESP_LOGI(TAG_AP, "SSID: %s, PASSWORD: %s", ssid_ap, password_ap);
+    ESP_LOGI(TAG_AP, "SSID: %s, PASSWORD: ********", SSID_AP);
 #endif
 
     WiFi.mode(WIFI_AP);
-    WiFi.softAP(ssid_ap, password_ap);
+    WiFi.softAP(SSID_AP, PASSWORD_AP);
 
     IPAddress ip = WiFi.softAPIP();
 

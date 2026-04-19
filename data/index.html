@@ -1,27 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
-    <title>Configuração</title>
+    <title>PM Nexus - Configuração</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link do CSS -->
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
-    <h2>Configurar Dispositivo</h2>
 
-    <form action="/config" method="POST">
-        <label>SSID:</label><br>
-        <input type="text" name="ssid"><br><br>
+    <header>
+        PM Nexus - Configuração
+    </header>
 
-        <label>Senha:</label><br>
-        <input type="password" name="password"><br><br>
+    <div class="container">
+        <div class="logo-container">
+            <img src="/images.png" alt="Logo">
+        </div>
 
-        <label>MQTT Server:</label><br>
-        <input type="text" name="mqtt"><br><br>
+        <form action="/config" method="POST">
 
-        <input type="submit" value="Salvar">
-    </form>
+            <div class="section">
+                <h3>WiFi</h3>
+
+                <label>SSID</label>
+                <input type="text" name="ssid" placeholder="Nome da rede" required>
+
+                <label>Senha</label>
+                <input type="password" name="password" placeholder="Senha da rede">
+            </div>
+
+            <div class="section">
+                <h3>MQTT</h3>
+
+                <label>Servidor MQTT</label>
+                <input type="text" name="mqtt" placeholder="Ex: 192.168.1.10" required>
+            </div>
+
+            <button type="submit">Salvar Configuração</button>
+        </form>
+    </div>
+
 </body>
 
 </html>
