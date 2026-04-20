@@ -5,3 +5,6 @@
 .vscode/ipch
 .web/backend/.venv
 .web/backend/venv
+.web/backend/app.log
+.web/backend/pm_nexus.db
+.web/backend/__pycache__

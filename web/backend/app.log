@@ -41,3 +41,100 @@
 2026-04-20 12:06:18 - MQTT - INFO - Conectado ao Broker com código: 0
 2026-04-20 12:06:19 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
 2026-04-20 12:06:19 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:21:16 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:21:16 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:21:16 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:21:16 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:22:39 - MQTT - INFO - Conteúdo recebido: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:39 - MQTT - INFO - Conteúdo recebido: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:39 - DATABASE - INFO - DB: Dados salvos (T:25.5, H:60, P:12.3)
+2026-04-20 12:22:39 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:40 - DATABASE - INFO - DB: Dados salvos (T:25.5, H:60, P:12.3)
+2026-04-20 12:22:40 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:41 - MQTT - INFO - Conteúdo recebido: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:41 - MQTT - INFO - Conteúdo recebido: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:41 - DATABASE - INFO - DB: Dados salvos (T:25.5, H:60, P:12.3)
+2026-04-20 12:22:41 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:22:41 - DATABASE - INFO - DB: Dados salvos (T:25.5, H:60, P:12.3)
+2026-04-20 12:22:41 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:26:17 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:26:17 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:26:17 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:26:17 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:28:13 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:28:13 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:28:13 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:28:13 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:29:55 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:29:55 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:29:56 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:29:56 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:29:59 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:29:59 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:30:00 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:30:00 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:30:24 - MQTT - INFO - Conteúdo recebido: {'temperatura': 30, 'humidade': 50, 'particulas': 10.3}
+2026-04-20 12:30:24 - MQTT - INFO - Conteúdo recebido: {'temperatura': 30, 'humidade': 50, 'particulas': 10.3}
+2026-04-20 12:30:24 - DATABASE - INFO - DB: Dados salvos (T:30, H:50, P:10.3)
+2026-04-20 12:30:24 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 30, 'humidade': 50, 'particulas': 10.3}
+2026-04-20 12:30:24 - DATABASE - INFO - DB: Dados salvos (T:30, H:50, P:10.3)
+2026-04-20 12:30:24 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 30, 'humidade': 50, 'particulas': 10.3}
+2026-04-20 12:34:47 - MQTT - INFO - Conteúdo recebido: {'temperatura': 20, 'humidade': 40, 'particulas': 15.3}
+2026-04-20 12:34:47 - MQTT - INFO - Conteúdo recebido: {'temperatura': 20, 'humidade': 40, 'particulas': 15.3}
+2026-04-20 12:34:47 - DATABASE - INFO - DB: Dados salvos (T:20, H:40, P:15.3)
+2026-04-20 12:34:47 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 20, 'humidade': 40, 'particulas': 15.3}
+2026-04-20 12:34:47 - DATABASE - INFO - DB: Dados salvos (T:20, H:40, P:15.3)
+2026-04-20 12:34:47 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 20, 'humidade': 40, 'particulas': 15.3}
+2026-04-20 12:35:07 - MQTT - INFO - Conteúdo recebido: {'temperatura': 60, 'humidade': 45, 'particulas': 20.3}
+2026-04-20 12:35:07 - MQTT - INFO - Conteúdo recebido: {'temperatura': 60, 'humidade': 45, 'particulas': 20.3}
+2026-04-20 12:35:07 - DATABASE - INFO - DB: Dados salvos (T:60, H:45, P:20.3)
+2026-04-20 12:35:07 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 60, 'humidade': 45, 'particulas': 20.3}
+2026-04-20 12:35:07 - DATABASE - INFO - DB: Dados salvos (T:60, H:45, P:20.3)
+2026-04-20 12:35:07 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 60, 'humidade': 45, 'particulas': 20.3}
+2026-04-20 12:37:46 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 12:37:46 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 12:37:46 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 12:37:46 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 12:37:46 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 12:37:46 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:00:16 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:00:16 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:00:16 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:00:16 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:02:21 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:02:40 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:03:16 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:03:35 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:03:35 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:03:36 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:03:36 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:03:38 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:03:38 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:03:42 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:03:57 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:03:57 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:04:31 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:04:31 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:04:31 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:04:31 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:04:36 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:04:36 - FLASK - INFO - Configuração atualizada: 127.0.0.1:1883 -> pm_nexus
+2026-04-20 14:04:50 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:04:50 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:04:50 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:04:50 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:04:50 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:04:50 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:05:17 - FLASK - INFO - Configuração atualizada: 127.0.0.1:1883 -> pm_nexu
+2026-04-20 14:05:17 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:05:24 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:05:24 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:05:24 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:05:37 - FLASK - INFO - Configuração atualizada: 127.0.0.1:1883 -> pm_nexus
+2026-04-20 14:05:37 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:05:43 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:05:43 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:05:43 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:05:43 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:05:43 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:05:43 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
