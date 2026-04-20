@@ -45,6 +45,7 @@ PM Nexus is an IoT project designed for particle counting in clean rooms. It uti
 ## Installation
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/yourusername/pm_nexus.git
    cd pm_nexus
@@ -55,11 +56,13 @@ PM Nexus is an IoT project designed for particle counting in clean rooms. It uti
 3. Install dependencies (PlatformIO will handle this automatically).
 
 4. Build the project:
+
    ```bash
    platformio run
    ```
 
 5. Upload to ESP32:
+
    ```bash
    platformio run --target upload --environment dev
    ```
@@ -72,6 +75,7 @@ PM Nexus is an IoT project designed for particle counting in clean rooms. It uti
 4. Configure WiFi credentials, MQTT settings, and sensor parameters via the web interface.
 
 Configuration parameters include:
+
 - WiFi SSID and password
 - MQTT server, port, topics, client ID
 - Sensor thresholds (temperature, humidity, PM2.5 ranges)

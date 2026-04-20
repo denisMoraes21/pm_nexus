@@ -34,5 +34,4 @@ Each library should live in its own folder under `lib/`, with code and metadata 
 PlatformIO builds each library once and links it with the application from `src/`.
 
 More information:
-
-- <https://docs.platformio.org/page/librarymanager/ldf.html>
+- https://docs.platformio.org/page/librarymanager/ldf.html

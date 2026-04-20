@@ -3,5 +3,10 @@
 
 namespace sleep_mode
 {
+    /**
+     * @brief Enter deep sleep mode for a specified time.
+     *
+     * @param time Wakeup time in microseconds.
+     */
     void deep_sleep(int time);
 }
