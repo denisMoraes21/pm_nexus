@@ -12,22 +12,57 @@ void web_server_esp::initWebServer()
         {
 #ifdef DEBUG_VALUES
             ESP_LOGI(TAG_WEB, "Route: 'config' ");
-#endif
+#endif      
+            // Wi-Fi
             String ssid     = request->getParam("ssid", true)->value();
             String password = request->getParam("password", true)->value();
-            String mqtt     = request->getParam("mqtt", true)->value();
+            int try_connection = request->getParam("try_connection", true)->value().toInt();
+            
+            // MQTT
+            String server = request->getParam("server", true)->value();
+            int port = request->getParam("port", true)->value().toInt();
+            String topic_pub = request->getParam("topic_pub", true)->value();
+            String topic_sub = request->getParam("topic_sub", true)->value();
+            String client = request->getParam("client", true)->value();
+            int time_reconnect = request->getParam("time_reconnect", true)->value().toInt();
+            int max_retry = request->getParam("max_retry", true)->value().toInt();
+
+            // Sensor
+            float pressure = request->getParam("pressure", true)->value().toFloat();
+            int sample_count = request->getParam("sample_count", true)->value().toInt();
+            int sample_delay = request->getParam("sample_delay", true)->value().toInt();
+            int min_temperature = request->getParam("min_temperature", true)->value().toInt();
+            int max_temperature = request->getParam("max_temperature", true)->value().toInt();
+            int min_humidity = request->getParam("min_humidity", true)->value().toInt();
+            int max_humidity = request->getParam("max_humidity", true)->value().toInt();
+            int min_pm_25 = request->getParam("min_pm_25", true)->value().toInt();
+            int max_pm_25 = request->getParam("max_pm_25", true)->value().toInt();
 
 #ifdef DEBUG_VALUES
-            ESP_LOGI(TAG_WEB, "WIFI - SSID: %s", ssid.c_str());
-            ESP_LOGI(TAG_WEB, "WIFI - PASSWORD: %s", password.c_str());
-            ESP_LOGI(TAG_WEB, "MQTT: %s", mqtt.c_str());
+            ESP_LOGI(TAG_WEB, "WIFI - ssid: %s", ssid.c_str());
+            ESP_LOGI(TAG_WEB, "WIFI - password: %s", password.c_str());
+
+            ESP_LOGI(TAG_WEB, "MQTT - server: %s", server.c_str());
+            ESP_LOGI(TAG_WEB, "MQTT - port: %d", port);
+            ESP_LOGI(TAG_WEB, "MQTT - topic pub: %s", topic_pub.c_str());
+            ESP_LOGI(TAG_WEB, "MQTT - topic sub: %s", topic_sub.c_str());
+            ESP_LOGI(TAG_WEB, "MQTT - client: %s", topic_sub.c_str());
+            ESP_LOGI(TAG_WEB, "MQTT - time reconnect: %d", time_reconnect);
+            ESP_LOGI(TAG_WEB, "MQTT - max retry: %d", max_retry);
+
+            ESP_LOGI(TAG_WEB, "MQTT - pressure: %f", pressure);
+            ESP_LOGI(TAG_WEB, "MQTT - sample count: %d", sample_count);
+            ESP_LOGI(TAG_WEB, "MQTT - sample delay: %d", sample_delay);
+            ESP_LOGI(TAG_WEB, "MQTT - min temperature: %d", min_temperature);
+            ESP_LOGI(TAG_WEB, "MQTT - max temperature: %d", max_temperature);
+            ESP_LOGI(TAG_WEB, "MQTT - min PM 2.5: %d", min_pm_25);
+            ESP_LOGI(TAG_WEB, "MQTT - max PM 2.5: %d", max_pm_25);
 #endif  
 
-            StaticJsonDocument<256> doc;
+            StaticJsonDocument<1024> doc;
 
             doc["ssid"] = ssid;
             doc["password"] = password;
-            doc["mqtt"] = mqtt;
 
             String json;
             serializeJson(doc, json);

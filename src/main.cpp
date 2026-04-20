@@ -37,7 +37,9 @@ void setup()
 }
 
 // TODO Add hard reset (button and delete config file)
-// TODO Add config page costumization
+// TODO Receive mqtt message?
+// TODO Limit parameters on config page
+// TODO Test connection after user insert parameter
 
 void loop()
 {
@@ -51,19 +53,47 @@ void loop()
             ;
     }
 
-    SensorAVGdata data = sensors::getSensorsAvg();
+    StaticJsonDocument<1024> doc;
+    spi_ffs::readConfigFile(doc);
+
+    WiFiParameters wifi_data{
+        doc["ssid"],
+        doc["password"],
+        doc["try_connection"]};
+
+    MQTTParameters mqtt_data{
+        doc["server"],
+        doc["port"],
+        doc["topic_pub"],
+        doc["topic_sub"],
+        doc["client"],
+        doc["time_reconnect"],
+        doc["rety_qty"]};
+
+    SensorParameters sensor_parameters{
+        doc["pressure"],
+        doc["sample_count"],
+        doc["sample_delay"],
+        doc["min_temperature"],
+        doc["max_temperature"],
+        doc["min_humidity"],
+        doc["max_humidity"],
+        doc["min_pm_25"],
+        doc["max_pm_25"]};
+
+    SensorAVGdata sensor_data = sensors::getSensorsAvg(sensor_parameters);
     bool useEthernet = ethernet::checkEthernet();
 
     if (!useEthernet)
     {
-        wifi::connectWiFi();
+        wifi::connectWiFi(wifi_data);
     }
 
     led::blink(BLINK_LED_TIME);
-    mqtt::initMqtt(useEthernet);
+    mqtt::initMqtt(useEthernet, mqtt_data);
     led::blink(BLINK_LED_TIME);
-    mqtt::reconnectMQTT();
+    mqtt::reconnectMQTT(mqtt_data);
     led::blink(BLINK_LED_TIME);
-    mqtt::publishData(data);
+    mqtt::publishData(sensor_data, mqtt_data);
     led::blink(BLINK_LED_TIME);
 }

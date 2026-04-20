@@ -3,8 +3,12 @@
 const char *TAG_STA = "WiFi-STA";
 const char *TAG_AP = "WiFi-AP";
 
-void wifi::connectWiFi()
+void wifi::connectWiFi(WiFiParameters wifi_data)
 {
+
+    const char *SSID_STA = wifi_data.SSID_STA;
+    const char *PASSWORD_STA = wifi_data.PASSWORD_STA;
+    const int try_connection_ = wifi_data.TRY_CONNECTION;
 
 #ifndef DEBUG_LEVEL
     ESP_LOGI(TAG_STA, "Wi-Fi Connection...");
@@ -13,6 +17,9 @@ void wifi::connectWiFi()
 
     WiFi.mode(WIFI_STA);
     WiFi.disconnect();
+
+    WiFi.mode(WIFI_OFF);
+    delay(1000);
 
     WiFi.begin(SSID_STA, PASSWORD_STA);
 
@@ -26,7 +33,7 @@ void wifi::connectWiFi()
 #endif
 
         try_connection++;
-        if (try_connection > try_connection_seconds)
+        if (try_connection > try_connection_)
         {
 
 #ifndef DEBUG_LEVEL

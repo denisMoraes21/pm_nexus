@@ -30,6 +30,11 @@ h3 {
     color: #333;
 }
 
+.required {
+    color: red;
+    margin-left: 4px;
+}
+
 label {
     font-weight: bold;
     color: #444;

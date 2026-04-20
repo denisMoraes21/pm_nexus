@@ -26,8 +26,9 @@ void callback(char *topic, byte *payload, unsigned int length)
 #endif
 }
 
-void mqtt::publishData(SensorAVGdata data)
+void mqtt::publishData(SensorAVGdata data, MQTTParameters parameters)
 {
+    const char *MQTT_TOPIC_PUB = parameters.MQTT_TOPIC_PUB;
     StaticJsonDocument<200> doc;
 
     JsonObject particle_obj = doc.createNestedObject("particle");
@@ -58,8 +59,10 @@ void mqtt::publishData(SensorAVGdata data)
     ESP_LOGI(TAG_MQTT, "Mensagem enviada: %s", payload);
 }
 
-void mqtt::initMqtt(bool useEthernet)
+void mqtt::initMqtt(bool useEthernet, MQTTParameters parameters)
 {
+    const char *server = parameters.MQTT_SERVER;
+    uint16_t port = parameters.MQTT_PORT;
     if (useEthernet)
     {
         mqtt_client.setClient(ethClient);
@@ -71,12 +74,17 @@ void mqtt::initMqtt(bool useEthernet)
         ESP_LOGI(TAG_MQTT, "MQTT usando WiFi");
     }
 
-    mqtt_client.setServer(MQTT_SERVER, MQTT_PORT);
+    mqtt_client.setServer(server, port);
     mqtt_client.setCallback(callback);
 }
 
-void mqtt::reconnectMQTT()
+void mqtt::reconnectMQTT(MQTTParameters parameters)
 {
+    int MQTT_MAX_RETRY = parameters.MQTT_MAX_RETRY;
+    String CLIENT = parameters.MQTT_CLIENT;
+    const char *MQTT_TOPIC_SUB = parameters.MQTT_TOPIC_SUB;
+    const char *MQTT_TOPIC_PUB = parameters.MQTT_TOPIC_PUB;
+    int MQTT_TIME_RECONNECT = parameters.MQTT_TIME_RECONNECT;
     int count = 0;
     while (!mqtt_client.connected() && count < MQTT_MAX_RETRY)
     {
@@ -85,8 +93,8 @@ void mqtt::reconnectMQTT()
         ESP_LOGE(TAG_MQTT, "Connecting MQTT...");
 #endif
 
-        String clientId = MQTT_CLIENT_ID;
-        clientId += String(random(0xffff), HEX);
+        String clientId = CLIENT;
+        clientId += CLIENT;
 
         if (mqtt_client.connect(clientId.c_str()))
         {

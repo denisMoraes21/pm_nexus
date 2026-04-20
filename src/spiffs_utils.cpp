@@ -4,82 +4,116 @@ const char *TAG_SPIFFS = "SPIFFS";
 
 bool spi_ffs::settingsFileExists()
 {
-  if (!SPIFFS.begin(true))
-  {
+    if (!SPIFFS.begin(true))
+    {
 
 #ifdef DEBUG_VALUES
-    ESP_LOGE(TAG_SPIFFS, "Error during mount SPIFFS");
+        ESP_LOGE(TAG_SPIFFS, "Error during mount SPIFFS");
 #endif
 
-    ESP.restart();
+        ESP.restart();
+        return false;
+    }
+    String path = "/" + String(CONFIG_FILE);
+
+    if (SPIFFS.exists(path))
+    {
+
+#ifdef DEBUG_VALUES
+        ESP_LOGI(TAG_SPIFFS, "%s exists", path.c_str());
+#endif
+        return true;
+    }
+
+#ifdef DEBUG_VALUES
+    ESP_LOGE(TAG_SPIFFS, "%s not exists", path.c_str());
+#endif
     return false;
-  }
-  String path = "/" + String(CONFIG_FILE);
-
-  if (SPIFFS.exists(path))
-  {
-
-#ifdef DEBUG_VALUES
-    ESP_LOGI(TAG_SPIFFS, "%s exists", path.c_str());
-#endif
-    return true;
-  }
-
-#ifdef DEBUG_VALUES
-  ESP_LOGE(TAG_SPIFFS, "%s not exists", path.c_str());
-#endif
-  return false;
 }
 
 bool spi_ffs::createFile(const char *conteudo)
 {
-  String path = "/" + String(CONFIG_FILE);
-  const char *nome = path.c_str();
-  if (!nome || nome[0] == '\0')
-  {
+    String path = "/" + String(CONFIG_FILE);
+    const char *nome = path.c_str();
+    if (!nome || nome[0] == '\0')
+    {
 
 #ifdef DEBUG_VALUES
-    ESP_LOGE(TAG_SPIFFS, "Invalid name!");
+        ESP_LOGE(TAG_SPIFFS, "Invalid name!");
 #endif
 
-    return false;
-  }
+        return false;
+    }
 
-  if (!conteudo)
-  {
+    if (!conteudo)
+    {
 
 #ifdef DEBUG_VALUES
-    ESP_LOGE(TAG_SPIFFS, "Null content!");
+        ESP_LOGE(TAG_SPIFFS, "Null content!");
 #endif
 
-    return false;
-  }
+        return false;
+    }
 
-  File f = SPIFFS.open(nome, "w");
-  if (!f)
-  {
+    File f = SPIFFS.open(nome, "w");
+    if (!f)
+    {
 
 #ifdef DEBUG_VALUES
-    ESP_LOGE(TAG_SPIFFS, "Not possible create file! %s", nome);
+        ESP_LOGE(TAG_SPIFFS, "Not possible create file! %s", nome);
 #endif
 
-    return false;
-  }
+        return false;
+    }
 
-  size_t n = f.print(conteudo);
-  f.close();
+    size_t n = f.print(conteudo);
+    f.close();
 
-  if (n == 0 && strlen(conteudo) > 0)
-  {
+    if (n == 0 && strlen(conteudo) > 0)
+    {
 
 #ifdef DEBUG_VALUES
-    ESP_LOGE(TAG_SPIFFS, "None writed (Is flash memory full?)");
+        ESP_LOGE(TAG_SPIFFS, "None writed (Is flash memory full?)");
 #endif
 
-    return false;
-  }
+        return false;
+    }
 
-  return true;
+    return true;
+}
+
+bool spi_ffs::readConfigFile(StaticJsonDocument<1024> &doc)
+{
+    String path = "/" + String(CONFIG_FILE);
+    if (!SPIFFS.exists(path.c_str()))
+    {
+#ifdef DEBUG_VALUES
+        ESP_LOGE(TAG_SPIFFS, "%s not exists", path.c_str());
+#endif
+        return false;
+    }
+
+    File f = SPIFFS.open(path.c_str(), "r");
+    if (!f)
+    {
+#ifdef DEBUG_VALUES
+        ESP_LOGE(TAG_SPIFFS, "Failed to open file");
+#endif
+        return false;
+    }
+
+    DeserializationError error = deserializeJson(doc, f);
+    f.close();
+
+    if (error)
+    {
+#ifdef DEBUG_VALUES
+        ESP_LOGE(TAG_SPIFFS, "JSON parse error: %s", error.c_str());
+#endif
+        return false;
+    }
+
+    return true;
 }
 
 // inline bool apagarArquivo(const char *nome)
