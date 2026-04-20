@@ -1,0 +1,43 @@
+2026-04-20 11:42:52 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:43:15 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:45:39 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:45:39 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:49:13 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:49:15 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:49:16 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:50:19 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:50:19 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 11:50:19 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 11:50:19 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:00:56 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:00:56 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:01:00 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:01:00 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:01:01 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:01:01 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:01:13 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:01:13 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:01:13 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:01:13 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:04:40 - MQTT - ERROR - Erro ao processar mensagem: 'MqttWorker' object has no attribute 'payload'
+2026-04-20 12:04:40 - MQTT - ERROR - Erro ao processar mensagem: 'MqttWorker' object has no attribute 'payload'
+2026-04-20 12:05:26 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:05:26 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:05:28 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:05:28 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:05:32 - MQTT - ERROR - Erro ao processar mensagem: 'MqttWorker' object has no attribute 'payload'
+2026-04-20 12:05:32 - MQTT - INFO - Conteúdo recebido: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:05:32 - DATABASE - INFO - DB: Dados salvos (T:25.5, H:60, P:12.3)
+2026-04-20 12:05:32 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 25.5, 'humidade': 60, 'particulas': 12.3}
+2026-04-20 12:06:09 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:06:09 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:06:12 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:06:12 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:06:15 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:06:15 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:06:17 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:06:17 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:06:18 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:06:18 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 12:06:19 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 12:06:19 - MQTT - INFO - Conectado ao Broker com código: 0
