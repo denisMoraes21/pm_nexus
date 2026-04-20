@@ -93,6 +93,74 @@ Configuration parameters include:
 
 Monitor the serial output for debugging information.
 
+## Web Application
+
+The project includes a web application with a backend API and a frontend dashboard for monitoring sensor data.
+
+### Backend
+
+The backend is built with Python using Flask and provides REST API endpoints for retrieving sensor data and managing configurations. It also handles MQTT communication and database storage.
+
+#### Prerequisites
+
+- Python 3.8+
+- pip
+- SQLite (for database)
+- MQTT Broker (e.g., Mosquitto)
+
+#### Installation
+
+1. Navigate to the backend directory:
+
+   ```bash
+   cd web/backend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   pip install flask flask-cors paho-mqtt
+   ```
+
+3. Run the application:
+
+   ```bash
+   python app.py
+   ```
+
+The backend will start on `http://localhost:5000` and connect to the MQTT broker.
+
+### Frontend
+
+The frontend is a React application that provides a user interface for viewing sensor data and configuring the system.
+
+#### Prerequisites
+
+- Node.js 14+
+- npm
+
+#### Installation
+
+1. Navigate to the frontend directory:
+
+   ```bash
+   cd web/frontend
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm start
+   ```
+
+The frontend will be available at `http://localhost:3000`.
+
 ## Architecture
 
 The project is modularized into several components:
@@ -131,6 +199,16 @@ pm_nexus/
 │   ├── index.html
 │   ├── style.css
 │   └── ...
+├── web/                    # Web application
+│   ├── backend/            # Flask API server
+│   │   ├── app.py          # Main Flask application
+│   │   ├── database.py     # Database utilities
+│   │   ├── mqtt.py         # MQTT client
+│   │   └── logger.py       # Logging utilities
+│   └── frontend/           # React dashboard
+│       ├── package.json    # Node.js dependencies
+│       ├── public/         # Static files
+│       └── src/            # React source code
 └── test/                   # Test files
 ```
 
