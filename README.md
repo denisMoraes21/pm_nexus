@@ -7,20 +7,21 @@ PM Nexus is an IoT project designed for particle counting in clean rooms. It uti
 ## Features
 
 - **Sensors Integration**:
+
   - BME280: Measures temperature and humidity.
   - Gravity Air Quality Sensor PM2.5: Measures particulate matter (PM2.5).
-
 - **Networking**:
+
   - WiFi Access Point mode for initial device configuration.
   - MQTT client for publishing sensor data to a broker.
-
 - **Energy Management**:
+
   - Deep Sleep mode to conserve power when idle.
-
 - **Web Interface**:
-  - Built-in web server for configuration via a browser.
 
+  - Built-in web server for configuration via a browser.
 - **Data Storage**:
+
   - SPIFFS for storing configuration settings.
 
 ## Hardware Requirements
@@ -50,17 +51,13 @@ PM Nexus is an IoT project designed for particle counting in clean rooms. It uti
    git clone https://github.com/yourusername/pm_nexus.git
    cd pm_nexus
    ```
-
 2. Open the project in PlatformIO.
-
 3. Install dependencies (PlatformIO will handle this automatically).
-
 4. Build the project:
 
    ```bash
    platformio run
    ```
-
 5. Upload to ESP32:
 
    ```bash
@@ -115,13 +112,11 @@ The backend is built with Python using Flask and provides REST API endpoints for
    ```bash
    cd web/backend
    ```
-
 2. Install dependencies:
 
    ```bash
    pip install flask flask-cors paho-mqtt
    ```
-
 3. Run the application:
 
    ```bash
@@ -146,13 +141,11 @@ The frontend is a React application that provides a user interface for viewing s
    ```bash
    cd web/frontend
    ```
-
 2. Install dependencies:
 
    ```bash
    npm install
    ```
-
 3. Start the development server:
 
    ```bash
@@ -227,7 +220,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Authors
 
 - Leonardo Souza Gomes
-- Batalha Amancio
+- Elthon Batalha Amancio
 - Igor De Oliveira Damasceno
 - Carlos Daniel Amazonas Da Silva
 

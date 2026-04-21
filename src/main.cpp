@@ -37,8 +37,10 @@ void setup()
 }
 
 // TODO Add hard reset (button and delete config file)
-// TODO Receive mqtt message?
+// TODO IoT device receive any mqtt message?
 // TODO Limit parameters on config page
+// TODO View wifi ssid list on config page
+// TODO Hide wifi password on config page
 // TODO Test connection after user insert parameter
 
 void loop()
@@ -83,6 +85,7 @@ void loop()
 
     SensorAVGdata sensor_data = sensors::getSensorsAvg(sensor_parameters);
     bool useEthernet = ethernet::checkEthernet();
+    mqtt::disconnectMQTT();
 
     if (!useEthernet)
     {

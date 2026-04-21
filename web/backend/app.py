@@ -9,7 +9,12 @@ class SensorApp:
     def __init__(self, db_connection):
         self.app = Flask(__name__)
 
-        CORS(self.app)
+        CORS(
+            self.app,
+            resources={
+                r"/*": {"origins": "*", "methods": ["GET", "POST", "DELETE", "OPTIONS"]}
+            },
+        )
         log = LogManager("FLASK")
         self.logger = log.get_logger()
         self.conn = db_connection
@@ -22,6 +27,12 @@ class SensorApp:
         self.app.add_url_rule("/dados", "get_dados", self.get_dados)
         self.app.add_url_rule(
             "/config", "save_config", self.save_config, methods=["POST"]
+        )
+        self.app.add_url_rule(
+            "/limpar",
+            "delete_data",
+            self.delete_data,
+            methods=["DELETE", "OPTIONS"],  # Certifique-se de que DELETE está aqui
         )
 
     def get_dados(self):
@@ -76,14 +87,28 @@ class SensorApp:
             print(e)
             return jsonify({"status": "error", "message": str(e)}), 400
 
+    def delete_data(self):
+        try:
+            # Chama o método que acabamos de corrigir na classe Database
+            self.db.clear_data()
+            return (
+                jsonify(
+                    {"status": "success", "message": "Histórico industrial apagado."}
+                ),
+                200,
+            )
+        except Exception as e:
+            return (
+                jsonify(
+                    {"status": "error", "message": f"Falha ao limpar banco: {str(e)}"}
+                ),
+                500,
+            )
+
     def run(self, debug=True, port=5000):
         self.app.run(debug=debug, port=port)
 
 
 if __name__ == "__main__":
-    # Aqui você passaria sua conexão real (ex: sqlite3.connect(...))
-    # meu_db = sqlite3.connect('banco.db', check_same_thread=False)
-
-    # Instanciamos e rodamos
-    meu_app = SensorApp(db_connection=None)  # Substitua None pela sua conexão
+    meu_app = SensorApp(db_connection=None)
     meu_app.run()

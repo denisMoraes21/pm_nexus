@@ -2,7 +2,11 @@
 
 WiFiClient wifiClient;
 EthernetClient ethClient;
-PubSubClient mqtt_client;
+
+PubSubClient mqtt_wifi(wifiClient);
+PubSubClient mqtt_eth(ethClient);
+
+PubSubClient *mqtt_client = nullptr;
 
 const char *TAG_MQTT = "MQTT";
 
@@ -32,21 +36,21 @@ void mqtt::publishData(SensorAVGdata data, MQTTParameters parameters)
     StaticJsonDocument<200> doc;
 
     JsonObject particle_obj = doc.createNestedObject("particle");
-    particle_obj["value"] = data.pm25;
+    particle_obj["value"] = round(data.pm25 * 100.0) / 100.0;
     particle_obj["unit"] = "um";
 
     JsonObject temp_obj = doc.createNestedObject("temp");
-    temp_obj["value"] = data.temp;
+    temp_obj["value"] = round(data.temp * 100.0) / 100.0;
     temp_obj["unit"] = "C";
 
     JsonObject humid_obj = doc.createNestedObject("humid");
-    humid_obj["value"] = data.humid;
+    humid_obj["value"] = round(data.humid * 100.0) / 100.0;
     humid_obj["unit"] = "%";
 
     String payload;
     serializeJson(doc, payload);
 
-    if (!mqtt_client.publish(MQTT_TOPIC_PUB, payload.c_str()))
+    if (!mqtt_client->publish(MQTT_TOPIC_PUB, payload.c_str()))
     {
 
 #ifdef DEBUG_VALUES
@@ -56,26 +60,27 @@ void mqtt::publishData(SensorAVGdata data, MQTTParameters parameters)
         ESP.restart();
         return;
     }
-    ESP_LOGI(TAG_MQTT, "Mensagem enviada: %s", payload);
+    ESP_LOGI(TAG_MQTT, "Mensagem enviada: %s", payload.c_str());
 }
 
 void mqtt::initMqtt(bool useEthernet, MQTTParameters parameters)
 {
     const char *server = parameters.MQTT_SERVER;
-    uint16_t port = parameters.MQTT_PORT;
+    int port = parameters.MQTT_PORT;
+
     if (useEthernet)
     {
-        mqtt_client.setClient(ethClient);
+        mqtt_client = &mqtt_eth;
         ESP_LOGI(TAG_MQTT, "MQTT usando Ethernet");
     }
     else
     {
-        mqtt_client.setClient(wifiClient);
+        mqtt_client = &mqtt_wifi;
         ESP_LOGI(TAG_MQTT, "MQTT usando WiFi");
     }
 
-    mqtt_client.setServer(server, port);
-    mqtt_client.setCallback(callback);
+    mqtt_client->setServer(server, port);
+    mqtt_client->setCallback(callback);
 }
 
 void mqtt::reconnectMQTT(MQTTParameters parameters)
@@ -86,7 +91,7 @@ void mqtt::reconnectMQTT(MQTTParameters parameters)
     const char *MQTT_TOPIC_PUB = parameters.MQTT_TOPIC_PUB;
     int MQTT_TIME_RECONNECT = parameters.MQTT_TIME_RECONNECT;
     int count = 0;
-    while (!mqtt_client.connected() && count < MQTT_MAX_RETRY)
+    while (!mqtt_client->connected() && count < MQTT_MAX_RETRY)
     {
 
 #ifdef DEBUG_VALUES
@@ -96,20 +101,20 @@ void mqtt::reconnectMQTT(MQTTParameters parameters)
         String clientId = CLIENT;
         clientId += CLIENT;
 
-        if (mqtt_client.connect(clientId.c_str()))
+        if (mqtt_client->connect(clientId.c_str()))
         {
 
 #ifdef DEBUG_VALUES
             ESP_LOGE(TAG_MQTT, "Connected!");
 #endif
 
-            mqtt_client.subscribe(MQTT_TOPIC_SUB);
+            mqtt_client->subscribe(MQTT_TOPIC_SUB);
         }
         else
         {
 
 #ifdef DEBUG_VALUES
-            ESP_LOGE(TAG_MQTT, "Failed, State: %d", mqtt_client.state());
+            ESP_LOGE(TAG_MQTT, "Failed, State: %d", mqtt_client->state());
             ESP_LOGE(TAG_MQTT, "Trying again in %f s", MQTT_TIME_RECONNECT / 1000);
 #endif
 
@@ -118,5 +123,13 @@ void mqtt::reconnectMQTT(MQTTParameters parameters)
         count++;
     }
 
-    mqtt_client.loop();
+    mqtt_client->loop();
+}
+
+void mqtt::disconnectMQTT()
+{
+    if (mqtt_client && mqtt_client->connected())
+    {
+        mqtt_client->disconnect();
+    }
 }

@@ -15,12 +15,14 @@ void wifi::connectWiFi(WiFiParameters wifi_data)
     ESP_LOGI(TAG_STA, "SSID: %s, PASSSWORD: %s", SSID_STA, PASSWORD_STA);
 #endif
 
-    WiFi.mode(WIFI_STA);
+    WiFi.mode(WIFI_OFF);
     WiFi.disconnect();
 
-    WiFi.mode(WIFI_OFF);
     delay(1000);
 
+    WiFi.mode(WIFI_STA);
+    delay(1000);
+    ESP_LOGI(TAG_STA, "%s, %s", SSID_STA, PASSWORD_STA);
     WiFi.begin(SSID_STA, PASSWORD_STA);
 
     int try_connection = 0;

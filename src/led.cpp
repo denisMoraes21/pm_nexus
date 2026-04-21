@@ -14,6 +14,7 @@ void led::ledOFF()
 
 void led::blink(int seconds)
 {
+#ifdef ENABLE_LED
     int count = 0;
     while (count < seconds)
     {
@@ -24,9 +25,12 @@ void led::blink(int seconds)
         delay(500);
         count++;
     }
+#endif
 }
 
 void led::initLed()
 {
+#ifdef ENABLE_LED
     pinMode(PINO_LED, OUTPUT);
+#endif
 }

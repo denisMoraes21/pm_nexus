@@ -138,3 +138,573 @@
 2026-04-20 14:05:43 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
 2026-04-20 14:05:43 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
 2026-04-20 14:05:43 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:20:08 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:20:08 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:20:09 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:20:09 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:23:40 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:23:40 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:23:41 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:23:41 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:23:44 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:23:44 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:25:24 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:25:24 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:25:25 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:25:25 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:25:39 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:25:39 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:25:41 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:25:41 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:26:11 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:26:11 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:26:11 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 14:26:11 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 14:26:24 - DATABASE - INFO - DB: Todos os dados foram removidos com sucesso.
+2026-04-20 14:26:24 - DATABASE - INFO - DB: Todos os dados foram removidos com sucesso.
+2026-04-20 14:26:32 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:26:32 - MQTT - INFO - Conteúdo recebido: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:26:32 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:26:32 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:26:32 - DATABASE - INFO - DB: Dados salvos (T:50, H:45.9, P:25.3)
+2026-04-20 14:26:32 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 50, 'humidade': 45.9, 'particulas': 25.3}
+2026-04-20 14:26:55 - MQTT - INFO - Conteúdo recebido: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:26:55 - MQTT - INFO - Conteúdo recebido: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:26:55 - DATABASE - INFO - DB: Dados salvos (T:55, H:50.9, P:30.3)
+2026-04-20 14:26:55 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:26:55 - DATABASE - INFO - DB: Dados salvos (T:55, H:50.9, P:30.3)
+2026-04-20 14:26:55 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:27:12 - MQTT - INFO - Conteúdo recebido: {'temperatura': 60, 'humidade': 55.9, 'particulas': 35.3}
+2026-04-20 14:27:12 - MQTT - INFO - Conteúdo recebido: {'temperatura': 60, 'humidade': 55.9, 'particulas': 35.3}
+2026-04-20 14:27:12 - DATABASE - INFO - DB: Dados salvos (T:60, H:55.9, P:35.3)
+2026-04-20 14:27:12 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 60, 'humidade': 55.9, 'particulas': 35.3}
+2026-04-20 14:27:12 - DATABASE - INFO - DB: Dados salvos (T:60, H:55.9, P:35.3)
+2026-04-20 14:27:12 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 60, 'humidade': 55.9, 'particulas': 35.3}
+2026-04-20 14:27:29 - MQTT - INFO - Conteúdo recebido: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:27:29 - MQTT - INFO - Conteúdo recebido: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:27:29 - DATABASE - INFO - DB: Dados salvos (T:55, H:50.9, P:30.3)
+2026-04-20 14:27:29 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 14:27:29 - DATABASE - INFO - DB: Dados salvos (T:55, H:50.9, P:30.3)
+2026-04-20 14:27:29 - MQTT - INFO - Dados salvos com sucesso: {'temperatura': 55, 'humidade': 50.9, 'particulas': 30.3}
+2026-04-20 21:03:21 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 21:03:21 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 21:03:21 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 21:03:21 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 21:04:22 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 21:04:22 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 21:04:23 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 21:04:23 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 21:44:57 - FLASK - INFO - Configuração atualizada: 192.168.1.33:1883 -> pm_nexus
+2026-04-20 21:44:57 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 21:58:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.54166603, 'unit': 'C'}, 'humid': {'value': 49.91666794, 'unit': '%'}}
+2026-04-20 21:58:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.54166603, 'unit': 'C'}, 'humid': {'value': 49.91666794, 'unit': '%'}}
+2026-04-20 21:58:14 - DATABASE - INFO - DB: Dados salvos (T:None, H:None, P:None)
+2026-04-20 21:58:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.54166603, 'unit': 'C'}, 'humid': {'value': 49.91666794, 'unit': '%'}}
+2026-04-20 21:58:14 - DATABASE - INFO - DB: Dados salvos (T:None, H:None, P:None)
+2026-04-20 21:58:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.54166603, 'unit': 'C'}, 'humid': {'value': 49.91666794, 'unit': '%'}}
+2026-04-20 22:00:11 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.81818199, 'unit': 'C'}, 'humid': {'value': 49.86363602, 'unit': '%'}}
+2026-04-20 22:00:11 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.81818199, 'unit': 'C'}, 'humid': {'value': 49.86363602, 'unit': '%'}}
+2026-04-20 22:00:11 - DATABASE - INFO - DB: Dados salvos (T:None, H:None, P:None)
+2026-04-20 22:00:11 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.81818199, 'unit': 'C'}, 'humid': {'value': 49.86363602, 'unit': '%'}}
+2026-04-20 22:00:11 - DATABASE - INFO - DB: Dados salvos (T:None, H:None, P:None)
+2026-04-20 22:00:11 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.81818199, 'unit': 'C'}, 'humid': {'value': 49.86363602, 'unit': '%'}}
+2026-04-20 22:01:46 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 22:01:46 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 22:01:47 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 22:01:47 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 22:01:52 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 22:01:52 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 22:02:59 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 22:02:59 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 22:02:59 - DATABASE - INFO - Banco de Dados: Verificação de tabela concluida.
+2026-04-20 22:02:59 - MQTT - INFO - Conectado ao Broker com código: 0
+2026-04-20 22:09:52 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.48148155, 'unit': 'C'}, 'humid': {'value': 48.55555725, 'unit': '%'}}
+2026-04-20 22:09:52 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.48148155, 'unit': 'C'}, 'humid': {'value': 48.55555725, 'unit': '%'}}
+2026-04-20 22:09:52 - DATABASE - INFO - DB: Dados salvos (T:21.48148155, H:48.55555725, P:6)
+2026-04-20 22:09:52 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.48148155, 'unit': 'C'}, 'humid': {'value': 48.55555725, 'unit': '%'}}
+2026-04-20 22:09:52 - DATABASE - INFO - DB: Dados salvos (T:21.48148155, H:48.55555725, P:6)
+2026-04-20 22:09:52 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.48148155, 'unit': 'C'}, 'humid': {'value': 48.55555725, 'unit': '%'}}
+2026-04-20 22:11:35 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.57894707, 'unit': 'C'}, 'humid': {'value': 51.36841965, 'unit': '%'}}
+2026-04-20 22:11:35 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.57894707, 'unit': 'C'}, 'humid': {'value': 51.36841965, 'unit': '%'}}
+2026-04-20 22:11:35 - DATABASE - INFO - DB: Dados salvos (T:21.57894707, H:51.36841965, P:5)
+2026-04-20 22:11:35 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.57894707, 'unit': 'C'}, 'humid': {'value': 51.36841965, 'unit': '%'}}
+2026-04-20 22:11:35 - DATABASE - INFO - DB: Dados salvos (T:21.57894707, H:51.36841965, P:5)
+2026-04-20 22:11:35 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.57894707, 'unit': 'C'}, 'humid': {'value': 51.36841965, 'unit': '%'}}
+2026-04-20 22:13:20 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29166603, 'unit': 'C'}, 'humid': {'value': 50.20833206, 'unit': '%'}}
+2026-04-20 22:13:20 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29166603, 'unit': 'C'}, 'humid': {'value': 50.20833206, 'unit': '%'}}
+2026-04-20 22:13:20 - DATABASE - INFO - DB: Dados salvos (T:21.29166603, H:50.20833206, P:6)
+2026-04-20 22:13:20 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29166603, 'unit': 'C'}, 'humid': {'value': 50.20833206, 'unit': '%'}}
+2026-04-20 22:13:20 - DATABASE - INFO - DB: Dados salvos (T:21.29166603, H:50.20833206, P:6)
+2026-04-20 22:13:20 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29166603, 'unit': 'C'}, 'humid': {'value': 50.20833206, 'unit': '%'}}
+2026-04-20 22:15:01 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.625, 'unit': 'C'}, 'humid': {'value': 51.04166794, 'unit': '%'}}
+2026-04-20 22:15:01 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.625, 'unit': 'C'}, 'humid': {'value': 51.04166794, 'unit': '%'}}
+2026-04-20 22:15:01 - DATABASE - INFO - DB: Dados salvos (T:20.625, H:51.04166794, P:6)
+2026-04-20 22:15:01 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.625, 'unit': 'C'}, 'humid': {'value': 51.04166794, 'unit': '%'}}
+2026-04-20 22:15:01 - DATABASE - INFO - DB: Dados salvos (T:20.625, H:51.04166794, P:6)
+2026-04-20 22:15:01 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.625, 'unit': 'C'}, 'humid': {'value': 51.04166794, 'unit': '%'}}
+2026-04-20 22:18:58 - DATABASE - INFO - DB: Todos os dados foram removidos com sucesso.
+2026-04-20 22:18:58 - DATABASE - INFO - DB: Todos os dados foram removidos com sucesso.
+2026-04-20 22:29:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5714283, 'unit': 'C'}, 'humid': {'value': 50.1428566, 'unit': '%'}}
+2026-04-20 22:29:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5714283, 'unit': 'C'}, 'humid': {'value': 50.1428566, 'unit': '%'}}
+2026-04-20 22:29:14 - DATABASE - INFO - DB: Dados salvos (T:21.5714283, H:50.1428566, P:7)
+2026-04-20 22:29:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5714283, 'unit': 'C'}, 'humid': {'value': 50.1428566, 'unit': '%'}}
+2026-04-20 22:29:14 - DATABASE - INFO - DB: Dados salvos (T:21.5714283, H:50.1428566, P:7)
+2026-04-20 22:29:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5714283, 'unit': 'C'}, 'humid': {'value': 50.1428566, 'unit': '%'}}
+2026-04-20 22:29:51 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.25, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-20 22:29:51 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.25, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-20 22:29:51 - DATABASE - INFO - DB: Dados salvos (T:21.25, H:54.5, P:4)
+2026-04-20 22:29:51 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.25, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-20 22:29:51 - DATABASE - INFO - DB: Dados salvos (T:21.25, H:54.5, P:4)
+2026-04-20 22:29:51 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.25, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-20 22:30:29 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 51.75, 'unit': '%'}}
+2026-04-20 22:30:29 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 51.75, 'unit': '%'}}
+2026-04-20 22:30:29 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:51.75, P:6)
+2026-04-20 22:30:29 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 51.75, 'unit': '%'}}
+2026-04-20 22:30:29 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:51.75, P:6)
+2026-04-20 22:30:29 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 51.75, 'unit': '%'}}
+2026-04-20 22:31:07 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.66666603, 'unit': 'C'}, 'humid': {'value': 50.83333206, 'unit': '%'}}
+2026-04-20 22:31:07 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.66666603, 'unit': 'C'}, 'humid': {'value': 50.83333206, 'unit': '%'}}
+2026-04-20 22:31:07 - DATABASE - INFO - DB: Dados salvos (T:20.66666603, H:50.83333206, P:5)
+2026-04-20 22:31:07 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.66666603, 'unit': 'C'}, 'humid': {'value': 50.83333206, 'unit': '%'}}
+2026-04-20 22:31:07 - DATABASE - INFO - DB: Dados salvos (T:20.66666603, H:50.83333206, P:5)
+2026-04-20 22:31:07 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.66666603, 'unit': 'C'}, 'humid': {'value': 50.83333206, 'unit': '%'}}
+2026-04-20 22:31:49 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.1428566, 'unit': 'C'}, 'humid': {'value': 47.57143021, 'unit': '%'}}
+2026-04-20 22:31:49 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.1428566, 'unit': 'C'}, 'humid': {'value': 47.57143021, 'unit': '%'}}
+2026-04-20 22:31:49 - DATABASE - INFO - DB: Dados salvos (T:21.1428566, H:47.57143021, P:5)
+2026-04-20 22:31:49 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.1428566, 'unit': 'C'}, 'humid': {'value': 47.57143021, 'unit': '%'}}
+2026-04-20 22:31:49 - DATABASE - INFO - DB: Dados salvos (T:21.1428566, H:47.57143021, P:5)
+2026-04-20 22:31:49 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.1428566, 'unit': 'C'}, 'humid': {'value': 47.57143021, 'unit': '%'}}
+2026-04-20 22:32:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.2857151, 'unit': 'C'}, 'humid': {'value': 49.1428566, 'unit': '%'}}
+2026-04-20 22:32:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.2857151, 'unit': 'C'}, 'humid': {'value': 49.1428566, 'unit': '%'}}
+2026-04-20 22:32:27 - DATABASE - INFO - DB: Dados salvos (T:21.2857151, H:49.1428566, P:5)
+2026-04-20 22:32:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.2857151, 'unit': 'C'}, 'humid': {'value': 49.1428566, 'unit': '%'}}
+2026-04-20 22:32:27 - DATABASE - INFO - DB: Dados salvos (T:21.2857151, H:49.1428566, P:5)
+2026-04-20 22:32:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.2857151, 'unit': 'C'}, 'humid': {'value': 49.1428566, 'unit': '%'}}
+2026-04-20 22:33:08 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20, 'unit': 'C'}, 'humid': {'value': 50.42856979, 'unit': '%'}}
+2026-04-20 22:33:08 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20, 'unit': 'C'}, 'humid': {'value': 50.42856979, 'unit': '%'}}
+2026-04-20 22:33:08 - DATABASE - INFO - DB: Dados salvos (T:20, H:50.42856979, P:8)
+2026-04-20 22:33:08 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20, 'unit': 'C'}, 'humid': {'value': 50.42856979, 'unit': '%'}}
+2026-04-20 22:33:08 - DATABASE - INFO - DB: Dados salvos (T:20, H:50.42856979, P:8)
+2026-04-20 22:33:08 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20, 'unit': 'C'}, 'humid': {'value': 50.42856979, 'unit': '%'}}
+2026-04-20 22:39:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:39:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:39:33 - DATABASE - INFO - DB: Dados salvos (T:20.71, H:47.86, P:7)
+2026-04-20 22:39:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:39:33 - DATABASE - INFO - DB: Dados salvos (T:20.71, H:47.86, P:7)
+2026-04-20 22:39:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:40:08 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-20 22:40:08 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-20 22:40:09 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:48, P:7)
+2026-04-20 22:40:09 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-20 22:40:09 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:48, P:7)
+2026-04-20 22:40:09 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-20 22:40:53 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.44, 'unit': 'C'}, 'humid': {'value': 49, 'unit': '%'}}
+2026-04-20 22:40:53 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.44, 'unit': 'C'}, 'humid': {'value': 49, 'unit': '%'}}
+2026-04-20 22:40:53 - DATABASE - INFO - DB: Dados salvos (T:20.44, H:49, P:5)
+2026-04-20 22:40:53 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.44, 'unit': 'C'}, 'humid': {'value': 49, 'unit': '%'}}
+2026-04-20 22:40:53 - DATABASE - INFO - DB: Dados salvos (T:20.44, H:49, P:5)
+2026-04-20 22:40:53 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.44, 'unit': 'C'}, 'humid': {'value': 49, 'unit': '%'}}
+2026-04-20 22:41:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:41:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:41:27 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:52.33, P:5)
+2026-04-20 22:41:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:41:27 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:52.33, P:5)
+2026-04-20 22:41:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:42:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.9, 'unit': '%'}}
+2026-04-20 22:42:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.9, 'unit': '%'}}
+2026-04-20 22:42:14 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:48.9, P:5)
+2026-04-20 22:42:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.9, 'unit': '%'}}
+2026-04-20 22:42:14 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:48.9, P:5)
+2026-04-20 22:42:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.9, 'unit': '%'}}
+2026-04-20 22:42:50 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-20 22:42:50 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-20 22:42:50 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:48.67, P:6)
+2026-04-20 22:42:50 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-20 22:42:50 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:48.67, P:6)
+2026-04-20 22:42:50 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-20 22:43:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:43:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:43:33 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:49.5, P:7)
+2026-04-20 22:43:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:43:33 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:49.5, P:7)
+2026-04-20 22:43:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:44:06 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:44:06 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:44:06 - DATABASE - INFO - DB: Dados salvos (T:21.75, H:51, P:5)
+2026-04-20 22:44:06 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:44:06 - DATABASE - INFO - DB: Dados salvos (T:21.75, H:51, P:5)
+2026-04-20 22:44:06 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:44:47 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 50.75, 'unit': '%'}}
+2026-04-20 22:44:47 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 50.75, 'unit': '%'}}
+2026-04-20 22:44:47 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:50.75, P:6)
+2026-04-20 22:44:47 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 50.75, 'unit': '%'}}
+2026-04-20 22:44:47 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:50.75, P:6)
+2026-04-20 22:44:47 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 50.75, 'unit': '%'}}
+2026-04-20 22:45:29 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 47.14, 'unit': '%'}}
+2026-04-20 22:45:29 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 47.14, 'unit': '%'}}
+2026-04-20 22:45:29 - DATABASE - INFO - DB: Dados salvos (T:21.29, H:47.14, P:6)
+2026-04-20 22:45:29 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 47.14, 'unit': '%'}}
+2026-04-20 22:45:29 - DATABASE - INFO - DB: Dados salvos (T:21.29, H:47.14, P:6)
+2026-04-20 22:45:29 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 47.14, 'unit': '%'}}
+2026-04-20 22:46:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:46:14 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:46:14 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:51, P:5)
+2026-04-20 22:46:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:46:14 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:51, P:5)
+2026-04-20 22:46:14 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:46:54 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.11, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-20 22:46:54 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.11, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-20 22:46:54 - DATABASE - INFO - DB: Dados salvos (T:21.11, H:54, P:6)
+2026-04-20 22:46:54 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.11, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-20 22:46:54 - DATABASE - INFO - DB: Dados salvos (T:21.11, H:54, P:6)
+2026-04-20 22:46:54 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.11, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-20 22:47:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.57, 'unit': 'C'}, 'humid': {'value': 49.29, 'unit': '%'}}
+2026-04-20 22:47:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.57, 'unit': 'C'}, 'humid': {'value': 49.29, 'unit': '%'}}
+2026-04-20 22:47:33 - DATABASE - INFO - DB: Dados salvos (T:20.57, H:49.29, P:4)
+2026-04-20 22:47:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.57, 'unit': 'C'}, 'humid': {'value': 49.29, 'unit': '%'}}
+2026-04-20 22:47:33 - DATABASE - INFO - DB: Dados salvos (T:20.57, H:49.29, P:4)
+2026-04-20 22:47:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.57, 'unit': 'C'}, 'humid': {'value': 49.29, 'unit': '%'}}
+2026-04-20 22:48:10 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 53.88, 'unit': '%'}}
+2026-04-20 22:48:10 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 53.88, 'unit': '%'}}
+2026-04-20 22:48:10 - DATABASE - INFO - DB: Dados salvos (T:21.75, H:53.88, P:5)
+2026-04-20 22:48:10 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 53.88, 'unit': '%'}}
+2026-04-20 22:48:10 - DATABASE - INFO - DB: Dados salvos (T:21.75, H:53.88, P:5)
+2026-04-20 22:48:10 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.75, 'unit': 'C'}, 'humid': {'value': 53.88, 'unit': '%'}}
+2026-04-20 22:48:50 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:48:50 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:48:50 - DATABASE - INFO - DB: Dados salvos (T:21.22, H:51, P:8)
+2026-04-20 22:48:50 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:48:50 - DATABASE - INFO - DB: Dados salvos (T:21.22, H:51, P:8)
+2026-04-20 22:48:50 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51, 'unit': '%'}}
+2026-04-20 22:49:24 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.86, 'unit': 'C'}, 'humid': {'value': 51.14, 'unit': '%'}}
+2026-04-20 22:49:24 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.86, 'unit': 'C'}, 'humid': {'value': 51.14, 'unit': '%'}}
+2026-04-20 22:49:24 - DATABASE - INFO - DB: Dados salvos (T:20.86, H:51.14, P:6)
+2026-04-20 22:49:24 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.86, 'unit': 'C'}, 'humid': {'value': 51.14, 'unit': '%'}}
+2026-04-20 22:49:24 - DATABASE - INFO - DB: Dados salvos (T:20.86, H:51.14, P:6)
+2026-04-20 22:49:24 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.86, 'unit': 'C'}, 'humid': {'value': 51.14, 'unit': '%'}}
+2026-04-20 22:50:02 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:50:02 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:50:02 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:52.33, P:6)
+2026-04-20 22:50:02 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:50:02 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:52.33, P:6)
+2026-04-20 22:50:02 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-20 22:50:40 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 46.86, 'unit': '%'}}
+2026-04-20 22:50:40 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 46.86, 'unit': '%'}}
+2026-04-20 22:50:40 - DATABASE - INFO - DB: Dados salvos (T:21.29, H:46.86, P:6)
+2026-04-20 22:50:40 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 46.86, 'unit': '%'}}
+2026-04-20 22:50:40 - DATABASE - INFO - DB: Dados salvos (T:21.29, H:46.86, P:6)
+2026-04-20 22:50:40 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.29, 'unit': 'C'}, 'humid': {'value': 46.86, 'unit': '%'}}
+2026-04-20 22:51:20 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.17, 'unit': 'C'}, 'humid': {'value': 53, 'unit': '%'}}
+2026-04-20 22:51:20 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.17, 'unit': 'C'}, 'humid': {'value': 53, 'unit': '%'}}
+2026-04-20 22:51:20 - DATABASE - INFO - DB: Dados salvos (T:20.17, H:53, P:4)
+2026-04-20 22:51:20 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.17, 'unit': 'C'}, 'humid': {'value': 53, 'unit': '%'}}
+2026-04-20 22:51:20 - DATABASE - INFO - DB: Dados salvos (T:20.17, H:53, P:4)
+2026-04-20 22:51:20 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.17, 'unit': 'C'}, 'humid': {'value': 53, 'unit': '%'}}
+2026-04-20 22:52:02 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50, 'unit': '%'}}
+2026-04-20 22:52:02 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50, 'unit': '%'}}
+2026-04-20 22:52:02 - DATABASE - INFO - DB: Dados salvos (T:20.83, H:50, P:7)
+2026-04-20 22:52:02 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50, 'unit': '%'}}
+2026-04-20 22:52:02 - DATABASE - INFO - DB: Dados salvos (T:20.83, H:50, P:7)
+2026-04-20 22:52:02 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50, 'unit': '%'}}
+2026-04-20 22:52:38 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.43, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:52:38 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.43, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:52:38 - DATABASE - INFO - DB: Dados salvos (T:20.43, H:47.86, P:6)
+2026-04-20 22:52:38 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.43, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:52:38 - DATABASE - INFO - DB: Dados salvos (T:20.43, H:47.86, P:6)
+2026-04-20 22:52:38 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.43, 'unit': 'C'}, 'humid': {'value': 47.86, 'unit': '%'}}
+2026-04-20 22:53:22 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 19.88, 'unit': 'C'}, 'humid': {'value': 45.75, 'unit': '%'}}
+2026-04-20 22:53:22 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 19.88, 'unit': 'C'}, 'humid': {'value': 45.75, 'unit': '%'}}
+2026-04-20 22:53:22 - DATABASE - INFO - DB: Dados salvos (T:19.88, H:45.75, P:4)
+2026-04-20 22:53:22 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 19.88, 'unit': 'C'}, 'humid': {'value': 45.75, 'unit': '%'}}
+2026-04-20 22:53:22 - DATABASE - INFO - DB: Dados salvos (T:19.88, H:45.75, P:4)
+2026-04-20 22:53:22 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 19.88, 'unit': 'C'}, 'humid': {'value': 45.75, 'unit': '%'}}
+2026-04-20 22:54:04 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 3, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.86, 'unit': '%'}}
+2026-04-20 22:54:04 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 3, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.86, 'unit': '%'}}
+2026-04-20 22:54:04 - DATABASE - INFO - DB: Dados salvos (T:21.86, H:51.86, P:3)
+2026-04-20 22:54:04 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 3, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.86, 'unit': '%'}}
+2026-04-20 22:54:04 - DATABASE - INFO - DB: Dados salvos (T:21.86, H:51.86, P:3)
+2026-04-20 22:54:04 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 3, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.86, 'unit': '%'}}
+2026-04-20 22:54:46 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 48.88, 'unit': '%'}}
+2026-04-20 22:54:46 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 48.88, 'unit': '%'}}
+2026-04-20 22:54:46 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:48.88, P:7)
+2026-04-20 22:54:46 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 48.88, 'unit': '%'}}
+2026-04-20 22:54:46 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:48.88, P:7)
+2026-04-20 22:54:46 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 48.88, 'unit': '%'}}
+2026-04-20 22:55:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.13, 'unit': '%'}}
+2026-04-20 22:55:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.13, 'unit': '%'}}
+2026-04-20 22:55:27 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:49.13, P:6)
+2026-04-20 22:55:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.13, 'unit': '%'}}
+2026-04-20 22:55:27 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:49.13, P:6)
+2026-04-20 22:55:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.13, 'unit': '%'}}
+2026-04-20 22:56:07 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:56:07 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:56:07 - DATABASE - INFO - DB: Dados salvos (T:20.88, H:48.5, P:5)
+2026-04-20 22:56:07 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:56:07 - DATABASE - INFO - DB: Dados salvos (T:20.88, H:48.5, P:5)
+2026-04-20 22:56:07 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:56:51 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.22, 'unit': 'C'}, 'humid': {'value': 53.33, 'unit': '%'}}
+2026-04-20 22:56:51 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.22, 'unit': 'C'}, 'humid': {'value': 53.33, 'unit': '%'}}
+2026-04-20 22:56:51 - DATABASE - INFO - DB: Dados salvos (T:20.22, H:53.33, P:6)
+2026-04-20 22:56:51 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.22, 'unit': 'C'}, 'humid': {'value': 53.33, 'unit': '%'}}
+2026-04-20 22:56:51 - DATABASE - INFO - DB: Dados salvos (T:20.22, H:53.33, P:6)
+2026-04-20 22:56:51 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.22, 'unit': 'C'}, 'humid': {'value': 53.33, 'unit': '%'}}
+2026-04-20 22:57:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51.5, 'unit': '%'}}
+2026-04-20 22:57:27 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51.5, 'unit': '%'}}
+2026-04-20 22:57:27 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:51.5, P:4)
+2026-04-20 22:57:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51.5, 'unit': '%'}}
+2026-04-20 22:57:27 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:51.5, P:4)
+2026-04-20 22:57:27 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 51.5, 'unit': '%'}}
+2026-04-20 22:58:03 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:58:03 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:58:03 - DATABASE - INFO - DB: Dados salvos (T:21, H:48.5, P:5)
+2026-04-20 22:58:03 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:58:03 - DATABASE - INFO - DB: Dados salvos (T:21, H:48.5, P:5)
+2026-04-20 22:58:03 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 48.5, 'unit': '%'}}
+2026-04-20 22:58:41 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.38, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:58:41 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.38, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:58:41 - DATABASE - INFO - DB: Dados salvos (T:21.38, H:49.5, P:5)
+2026-04-20 22:58:41 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.38, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:58:41 - DATABASE - INFO - DB: Dados salvos (T:21.38, H:49.5, P:5)
+2026-04-20 22:58:41 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.38, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-20 22:59:22 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 52.88, 'unit': '%'}}
+2026-04-20 22:59:22 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 52.88, 'unit': '%'}}
+2026-04-20 22:59:22 - DATABASE - INFO - DB: Dados salvos (T:21, H:52.88, P:5)
+2026-04-20 22:59:22 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 52.88, 'unit': '%'}}
+2026-04-20 22:59:22 - DATABASE - INFO - DB: Dados salvos (T:21, H:52.88, P:5)
+2026-04-20 22:59:22 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 52.88, 'unit': '%'}}
+2026-04-20 23:00:00 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.43, 'unit': '%'}}
+2026-04-20 23:00:00 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.43, 'unit': '%'}}
+2026-04-20 23:00:00 - DATABASE - INFO - DB: Dados salvos (T:21.86, H:51.43, P:7)
+2026-04-20 23:00:00 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.43, 'unit': '%'}}
+2026-04-20 23:00:00 - DATABASE - INFO - DB: Dados salvos (T:21.86, H:51.43, P:7)
+2026-04-20 23:00:00 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.86, 'unit': 'C'}, 'humid': {'value': 51.43, 'unit': '%'}}
+2026-04-20 23:00:39 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 50.33, 'unit': '%'}}
+2026-04-20 23:00:39 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 50.33, 'unit': '%'}}
+2026-04-20 23:00:39 - DATABASE - INFO - DB: Dados salvos (T:20.33, H:50.33, P:4)
+2026-04-20 23:00:39 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 50.33, 'unit': '%'}}
+2026-04-20 23:00:39 - DATABASE - INFO - DB: Dados salvos (T:20.33, H:50.33, P:4)
+2026-04-20 23:00:39 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 50.33, 'unit': '%'}}
+2026-04-20 23:01:17 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-20 23:01:17 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-20 23:01:17 - DATABASE - INFO - DB: Dados salvos (T:20.71, H:48.71, P:5)
+2026-04-20 23:01:17 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-20 23:01:17 - DATABASE - INFO - DB: Dados salvos (T:20.71, H:48.71, P:5)
+2026-04-20 23:01:17 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-21 08:51:03 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.29, 'unit': 'C'}, 'humid': {'value': 50.71, 'unit': '%'}}
+2026-04-21 08:51:03 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.29, 'unit': 'C'}, 'humid': {'value': 50.71, 'unit': '%'}}
+2026-04-21 08:51:03 - DATABASE - INFO - DB: Dados salvos (T:20.29, H:50.71, P:6)
+2026-04-21 08:51:03 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.29, 'unit': 'C'}, 'humid': {'value': 50.71, 'unit': '%'}}
+2026-04-21 08:51:03 - DATABASE - INFO - DB: Dados salvos (T:20.29, H:50.71, P:6)
+2026-04-21 08:51:03 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.29, 'unit': 'C'}, 'humid': {'value': 50.71, 'unit': '%'}}
+2026-04-21 08:51:44 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.63, 'unit': '%'}}
+2026-04-21 08:51:44 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.63, 'unit': '%'}}
+2026-04-21 08:51:44 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:50.63, P:6)
+2026-04-21 08:51:44 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.63, 'unit': '%'}}
+2026-04-21 08:51:44 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:50.63, P:6)
+2026-04-21 08:51:44 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.63, 'unit': '%'}}
+2026-04-21 08:52:28 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 47.5, 'unit': '%'}}
+2026-04-21 08:52:28 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 47.5, 'unit': '%'}}
+2026-04-21 08:52:28 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:47.5, P:5)
+2026-04-21 08:52:28 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 47.5, 'unit': '%'}}
+2026-04-21 08:52:28 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:47.5, P:5)
+2026-04-21 08:52:28 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 47.5, 'unit': '%'}}
+2026-04-21 08:52:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.2, 'unit': 'C'}, 'humid': {'value': 54.6, 'unit': '%'}}
+2026-04-21 08:52:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.2, 'unit': 'C'}, 'humid': {'value': 54.6, 'unit': '%'}}
+2026-04-21 08:52:56 - DATABASE - INFO - DB: Dados salvos (T:21.2, H:54.6, P:7)
+2026-04-21 08:52:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.2, 'unit': 'C'}, 'humid': {'value': 54.6, 'unit': '%'}}
+2026-04-21 08:52:56 - DATABASE - INFO - DB: Dados salvos (T:21.2, H:54.6, P:7)
+2026-04-21 08:52:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.2, 'unit': 'C'}, 'humid': {'value': 54.6, 'unit': '%'}}
+2026-04-21 08:53:28 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-21 08:53:28 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-21 08:53:28 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:48.67, P:4)
+2026-04-21 08:53:28 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-21 08:53:28 - DATABASE - INFO - DB: Dados salvos (T:21.67, H:48.67, P:4)
+2026-04-21 08:53:28 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.67, 'unit': 'C'}, 'humid': {'value': 48.67, 'unit': '%'}}
+2026-04-21 08:54:09 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.25, 'unit': '%'}}
+2026-04-21 08:54:09 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.25, 'unit': '%'}}
+2026-04-21 08:54:09 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:48.25, P:6)
+2026-04-21 08:54:09 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.25, 'unit': '%'}}
+2026-04-21 08:54:09 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:48.25, P:6)
+2026-04-21 08:54:09 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.25, 'unit': '%'}}
+2026-04-21 08:54:50 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-21 08:54:50 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-21 08:54:50 - DATABASE - INFO - DB: Dados salvos (T:20.71, H:48.71, P:6)
+2026-04-21 08:54:50 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-21 08:54:50 - DATABASE - INFO - DB: Dados salvos (T:20.71, H:48.71, P:6)
+2026-04-21 08:54:50 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.71, 'unit': 'C'}, 'humid': {'value': 48.71, 'unit': '%'}}
+2026-04-21 08:55:30 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.56, 'unit': 'C'}, 'humid': {'value': 52.67, 'unit': '%'}}
+2026-04-21 08:55:30 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.56, 'unit': 'C'}, 'humid': {'value': 52.67, 'unit': '%'}}
+2026-04-21 08:55:30 - DATABASE - INFO - DB: Dados salvos (T:21.56, H:52.67, P:6)
+2026-04-21 08:55:30 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.56, 'unit': 'C'}, 'humid': {'value': 52.67, 'unit': '%'}}
+2026-04-21 08:55:30 - DATABASE - INFO - DB: Dados salvos (T:21.56, H:52.67, P:6)
+2026-04-21 08:55:30 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.56, 'unit': 'C'}, 'humid': {'value': 52.67, 'unit': '%'}}
+2026-04-21 08:56:10 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.17, 'unit': 'C'}, 'humid': {'value': 52, 'unit': '%'}}
+2026-04-21 08:56:10 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.17, 'unit': 'C'}, 'humid': {'value': 52, 'unit': '%'}}
+2026-04-21 08:56:10 - DATABASE - INFO - DB: Dados salvos (T:21.17, H:52, P:5)
+2026-04-21 08:56:10 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.17, 'unit': 'C'}, 'humid': {'value': 52, 'unit': '%'}}
+2026-04-21 08:56:10 - DATABASE - INFO - DB: Dados salvos (T:21.17, H:52, P:5)
+2026-04-21 08:56:10 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.17, 'unit': 'C'}, 'humid': {'value': 52, 'unit': '%'}}
+2026-04-21 08:56:49 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 48.33, 'unit': '%'}}
+2026-04-21 08:56:49 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 48.33, 'unit': '%'}}
+2026-04-21 08:56:49 - DATABASE - INFO - DB: Dados salvos (T:21.22, H:48.33, P:6)
+2026-04-21 08:56:49 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 48.33, 'unit': '%'}}
+2026-04-21 08:56:49 - DATABASE - INFO - DB: Dados salvos (T:21.22, H:48.33, P:6)
+2026-04-21 08:56:49 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 48.33, 'unit': '%'}}
+2026-04-21 08:57:10 - DATABASE - INFO - DB: Todos os dados foram removidos com sucesso.
+2026-04-21 08:57:10 - DATABASE - INFO - DB: Todos os dados foram removidos com sucesso.
+2026-04-21 08:57:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 44.71, 'unit': '%'}}
+2026-04-21 08:57:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 44.71, 'unit': '%'}}
+2026-04-21 08:57:33 - DATABASE - INFO - DB: Dados salvos (T:22, H:44.71, P:6)
+2026-04-21 08:57:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 44.71, 'unit': '%'}}
+2026-04-21 08:57:33 - DATABASE - INFO - DB: Dados salvos (T:22, H:44.71, P:6)
+2026-04-21 08:57:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 44.71, 'unit': '%'}}
+2026-04-21 09:04:34 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.83, 'unit': 'C'}, 'humid': {'value': 45, 'unit': '%'}}
+2026-04-21 09:04:34 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.83, 'unit': 'C'}, 'humid': {'value': 45, 'unit': '%'}}
+2026-04-21 09:04:34 - DATABASE - INFO - DB: Dados salvos (T:21.83, H:45, P:7)
+2026-04-21 09:04:34 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.83, 'unit': 'C'}, 'humid': {'value': 45, 'unit': '%'}}
+2026-04-21 09:04:34 - DATABASE - INFO - DB: Dados salvos (T:21.83, H:45, P:7)
+2026-04-21 09:04:34 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.83, 'unit': 'C'}, 'humid': {'value': 45, 'unit': '%'}}
+2026-04-21 09:05:13 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.38, 'unit': 'C'}, 'humid': {'value': 48.13, 'unit': '%'}}
+2026-04-21 09:05:13 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.38, 'unit': 'C'}, 'humid': {'value': 48.13, 'unit': '%'}}
+2026-04-21 09:05:13 - DATABASE - INFO - DB: Dados salvos (T:20.38, H:48.13, P:4)
+2026-04-21 09:05:13 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.38, 'unit': 'C'}, 'humid': {'value': 48.13, 'unit': '%'}}
+2026-04-21 09:05:13 - DATABASE - INFO - DB: Dados salvos (T:20.38, H:48.13, P:4)
+2026-04-21 09:05:13 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.38, 'unit': 'C'}, 'humid': {'value': 48.13, 'unit': '%'}}
+2026-04-21 09:05:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 50.88, 'unit': '%'}}
+2026-04-21 09:05:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 50.88, 'unit': '%'}}
+2026-04-21 09:05:56 - DATABASE - INFO - DB: Dados salvos (T:20.75, H:50.88, P:5)
+2026-04-21 09:05:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 50.88, 'unit': '%'}}
+2026-04-21 09:05:56 - DATABASE - INFO - DB: Dados salvos (T:20.75, H:50.88, P:5)
+2026-04-21 09:05:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 50.88, 'unit': '%'}}
+2026-04-21 09:06:28 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-21 09:06:28 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-21 09:06:28 - DATABASE - INFO - DB: Dados salvos (T:20.33, H:54, P:6)
+2026-04-21 09:06:28 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-21 09:06:28 - DATABASE - INFO - DB: Dados salvos (T:20.33, H:54, P:6)
+2026-04-21 09:06:28 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.33, 'unit': 'C'}, 'humid': {'value': 54, 'unit': '%'}}
+2026-04-21 09:07:02 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-21 09:07:02 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-21 09:07:02 - DATABASE - INFO - DB: Dados salvos (T:22, H:54.5, P:7)
+2026-04-21 09:07:02 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-21 09:07:02 - DATABASE - INFO - DB: Dados salvos (T:22, H:54.5, P:7)
+2026-04-21 09:07:02 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 54.5, 'unit': '%'}}
+2026-04-21 09:07:43 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.63, 'unit': 'C'}, 'humid': {'value': 49.75, 'unit': '%'}}
+2026-04-21 09:07:43 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.63, 'unit': 'C'}, 'humid': {'value': 49.75, 'unit': '%'}}
+2026-04-21 09:07:43 - DATABASE - INFO - DB: Dados salvos (T:21.63, H:49.75, P:4)
+2026-04-21 09:07:43 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.63, 'unit': 'C'}, 'humid': {'value': 49.75, 'unit': '%'}}
+2026-04-21 09:07:43 - DATABASE - INFO - DB: Dados salvos (T:21.63, H:49.75, P:4)
+2026-04-21 09:07:43 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21.63, 'unit': 'C'}, 'humid': {'value': 49.75, 'unit': '%'}}
+2026-04-21 09:08:13 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:08:13 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:08:13 - DATABASE - INFO - DB: Dados salvos (T:20.83, H:50.5, P:8)
+2026-04-21 09:08:13 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:08:13 - DATABASE - INFO - DB: Dados salvos (T:20.83, H:50.5, P:8)
+2026-04-21 09:08:13 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 8, 'unit': 'um'}, 'temp': {'value': 20.83, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:08:57 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51.11, 'unit': '%'}}
+2026-04-21 09:08:57 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51.11, 'unit': '%'}}
+2026-04-21 09:08:57 - DATABASE - INFO - DB: Dados salvos (T:21.22, H:51.11, P:6)
+2026-04-21 09:08:57 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51.11, 'unit': '%'}}
+2026-04-21 09:08:57 - DATABASE - INFO - DB: Dados salvos (T:21.22, H:51.11, P:6)
+2026-04-21 09:08:57 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.22, 'unit': 'C'}, 'humid': {'value': 51.11, 'unit': '%'}}
+2026-04-21 09:09:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.4, 'unit': 'C'}, 'humid': {'value': 49.4, 'unit': '%'}}
+2026-04-21 09:09:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.4, 'unit': 'C'}, 'humid': {'value': 49.4, 'unit': '%'}}
+2026-04-21 09:09:33 - DATABASE - INFO - DB: Dados salvos (T:21.4, H:49.4, P:6)
+2026-04-21 09:09:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.4, 'unit': 'C'}, 'humid': {'value': 49.4, 'unit': '%'}}
+2026-04-21 09:09:33 - DATABASE - INFO - DB: Dados salvos (T:21.4, H:49.4, P:6)
+2026-04-21 09:09:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.4, 'unit': 'C'}, 'humid': {'value': 49.4, 'unit': '%'}}
+2026-04-21 09:10:18 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 49.22, 'unit': '%'}}
+2026-04-21 09:10:18 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 49.22, 'unit': '%'}}
+2026-04-21 09:10:19 - DATABASE - INFO - DB: Dados salvos (T:21, H:49.22, P:4)
+2026-04-21 09:10:19 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 49.22, 'unit': '%'}}
+2026-04-21 09:10:19 - DATABASE - INFO - DB: Dados salvos (T:21, H:49.22, P:4)
+2026-04-21 09:10:19 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 49.22, 'unit': '%'}}
+2026-04-21 09:11:03 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-21 09:11:03 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-21 09:11:03 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:49.5, P:5)
+2026-04-21 09:11:03 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-21 09:11:03 - DATABASE - INFO - DB: Dados salvos (T:20.63, H:49.5, P:5)
+2026-04-21 09:11:03 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.63, 'unit': 'C'}, 'humid': {'value': 49.5, 'unit': '%'}}
+2026-04-21 09:11:34 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 2, 'unit': 'um'}, 'temp': {'value': 20.2, 'unit': 'C'}, 'humid': {'value': 51.8, 'unit': '%'}}
+2026-04-21 09:11:34 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 2, 'unit': 'um'}, 'temp': {'value': 20.2, 'unit': 'C'}, 'humid': {'value': 51.8, 'unit': '%'}}
+2026-04-21 09:11:34 - DATABASE - INFO - DB: Dados salvos (T:20.2, H:51.8, P:2)
+2026-04-21 09:11:34 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 2, 'unit': 'um'}, 'temp': {'value': 20.2, 'unit': 'C'}, 'humid': {'value': 51.8, 'unit': '%'}}
+2026-04-21 09:11:34 - DATABASE - INFO - DB: Dados salvos (T:20.2, H:51.8, P:2)
+2026-04-21 09:11:34 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 2, 'unit': 'um'}, 'temp': {'value': 20.2, 'unit': 'C'}, 'humid': {'value': 51.8, 'unit': '%'}}
+2026-04-21 09:12:18 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 50.29, 'unit': '%'}}
+2026-04-21 09:12:18 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 50.29, 'unit': '%'}}
+2026-04-21 09:12:18 - DATABASE - INFO - DB: Dados salvos (T:21.14, H:50.29, P:6)
+2026-04-21 09:12:18 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 50.29, 'unit': '%'}}
+2026-04-21 09:12:18 - DATABASE - INFO - DB: Dados salvos (T:21.14, H:50.29, P:6)
+2026-04-21 09:12:18 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 50.29, 'unit': '%'}}
+2026-04-21 09:15:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 47, 'unit': '%'}}
+2026-04-21 09:15:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 47, 'unit': '%'}}
+2026-04-21 09:15:56 - DATABASE - INFO - DB: Dados salvos (T:21, H:47, P:7)
+2026-04-21 09:15:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 47, 'unit': '%'}}
+2026-04-21 09:15:56 - DATABASE - INFO - DB: Dados salvos (T:21, H:47, P:7)
+2026-04-21 09:15:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21, 'unit': 'C'}, 'humid': {'value': 47, 'unit': '%'}}
+2026-04-21 09:16:17 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.13, 'unit': 'C'}, 'humid': {'value': 50.38, 'unit': '%'}}
+2026-04-21 09:16:17 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.13, 'unit': 'C'}, 'humid': {'value': 50.38, 'unit': '%'}}
+2026-04-21 09:16:17 - DATABASE - INFO - DB: Dados salvos (T:21.13, H:50.38, P:6)
+2026-04-21 09:16:17 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.13, 'unit': 'C'}, 'humid': {'value': 50.38, 'unit': '%'}}
+2026-04-21 09:16:17 - DATABASE - INFO - DB: Dados salvos (T:21.13, H:50.38, P:6)
+2026-04-21 09:16:17 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.13, 'unit': 'C'}, 'humid': {'value': 50.38, 'unit': '%'}}
+2026-04-21 09:16:35 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 47.57, 'unit': '%'}}
+2026-04-21 09:16:35 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 47.57, 'unit': '%'}}
+2026-04-21 09:16:35 - DATABASE - INFO - DB: Dados salvos (T:21.14, H:47.57, P:7)
+2026-04-21 09:16:35 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 47.57, 'unit': '%'}}
+2026-04-21 09:16:35 - DATABASE - INFO - DB: Dados salvos (T:21.14, H:47.57, P:7)
+2026-04-21 09:16:35 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 47.57, 'unit': '%'}}
+2026-04-21 09:16:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 53.38, 'unit': '%'}}
+2026-04-21 09:16:56 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 53.38, 'unit': '%'}}
+2026-04-21 09:16:56 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:53.38, P:4)
+2026-04-21 09:16:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 53.38, 'unit': '%'}}
+2026-04-21 09:16:56 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:53.38, P:4)
+2026-04-21 09:16:56 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 4, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 53.38, 'unit': '%'}}
+2026-04-21 09:17:12 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.83, 'unit': '%'}}
+2026-04-21 09:17:12 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.83, 'unit': '%'}}
+2026-04-21 09:17:12 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:48.83, P:5)
+2026-04-21 09:17:12 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.83, 'unit': '%'}}
+2026-04-21 09:17:12 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:48.83, P:5)
+2026-04-21 09:17:12 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 48.83, 'unit': '%'}}
+2026-04-21 09:17:26 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 49.8, 'unit': '%'}}
+2026-04-21 09:17:26 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 49.8, 'unit': '%'}}
+2026-04-21 09:17:26 - DATABASE - INFO - DB: Dados salvos (T:22, H:49.8, P:7)
+2026-04-21 09:17:26 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 49.8, 'unit': '%'}}
+2026-04-21 09:17:26 - DATABASE - INFO - DB: Dados salvos (T:22, H:49.8, P:7)
+2026-04-21 09:17:26 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 22, 'unit': 'C'}, 'humid': {'value': 49.8, 'unit': '%'}}
+2026-04-21 09:25:32 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 52.57, 'unit': '%'}}
+2026-04-21 09:25:32 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 52.57, 'unit': '%'}}
+2026-04-21 09:25:32 - DATABASE - INFO - DB: Dados salvos (T:21.14, H:52.57, P:5)
+2026-04-21 09:25:32 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 52.57, 'unit': '%'}}
+2026-04-21 09:25:32 - DATABASE - INFO - DB: Dados salvos (T:21.14, H:52.57, P:5)
+2026-04-21 09:25:32 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 5, 'unit': 'um'}, 'temp': {'value': 21.14, 'unit': 'C'}, 'humid': {'value': 52.57, 'unit': '%'}}
+2026-04-21 09:25:52 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-21 09:25:52 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-21 09:25:52 - DATABASE - INFO - DB: Dados salvos (T:20.88, H:48, P:6)
+2026-04-21 09:25:52 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-21 09:25:52 - DATABASE - INFO - DB: Dados salvos (T:20.88, H:48, P:6)
+2026-04-21 09:25:52 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.88, 'unit': 'C'}, 'humid': {'value': 48, 'unit': '%'}}
+2026-04-21 09:26:13 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 48.38, 'unit': '%'}}
+2026-04-21 09:26:13 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 48.38, 'unit': '%'}}
+2026-04-21 09:26:13 - DATABASE - INFO - DB: Dados salvos (T:20.75, H:48.38, P:6)
+2026-04-21 09:26:13 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 48.38, 'unit': '%'}}
+2026-04-21 09:26:13 - DATABASE - INFO - DB: Dados salvos (T:20.75, H:48.38, P:6)
+2026-04-21 09:26:13 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 20.75, 'unit': 'C'}, 'humid': {'value': 48.38, 'unit': '%'}}
+2026-04-21 09:26:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 53.63, 'unit': '%'}}
+2026-04-21 09:26:33 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 53.63, 'unit': '%'}}
+2026-04-21 09:26:33 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:53.63, P:6)
+2026-04-21 09:26:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 53.63, 'unit': '%'}}
+2026-04-21 09:26:33 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:53.63, P:6)
+2026-04-21 09:26:33 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 6, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 53.63, 'unit': '%'}}
+2026-04-21 09:26:54 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:26:54 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:26:54 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:50.5, P:7)
+2026-04-21 09:26:54 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:26:54 - DATABASE - INFO - DB: Dados salvos (T:20.5, H:50.5, P:7)
+2026-04-21 09:26:54 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 20.5, 'unit': 'C'}, 'humid': {'value': 50.5, 'unit': '%'}}
+2026-04-21 09:27:11 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-21 09:27:11 - MQTT - INFO - Conteúdo recebido: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-21 09:27:11 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:52.33, P:7)
+2026-04-21 09:27:11 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}
+2026-04-21 09:27:11 - DATABASE - INFO - DB: Dados salvos (T:21.5, H:52.33, P:7)
+2026-04-21 09:27:11 - MQTT - INFO - Dados salvos com sucesso: {'particle': {'value': 7, 'unit': 'um'}, 'temp': {'value': 21.5, 'unit': 'C'}, 'humid': {'value': 52.33, 'unit': '%'}}

@@ -195,7 +195,7 @@ SensorAVGdata sensors::getSensorsAvg(SensorParameters parameters)
 #ifdef SLEEPING_MODE
                 sleep_mode::deep_sleep(sample_delay);
 #else
-                delay(sample_dalay);
+                delay(sample_delay);
 #endif
             }
         }

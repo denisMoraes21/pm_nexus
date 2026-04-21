@@ -31,9 +31,9 @@ class Database:
                 self.logger.error(f"Banco de Dados: Erro ao inicializar: {e}")
 
     def save_data(self, dados):
-        t = dados.get("temperatura")
-        h = dados.get("humidade")
-        p = dados.get("particulas")
+        t = dados["temp"]["value"]
+        h = dados["humid"]["value"]
+        p = dados["particle"]["value"]
 
         query = """
             INSERT INTO sensores (temperatura, humidade, particulas)
@@ -62,3 +62,19 @@ class Database:
                 (limite,),
             )
             return cursor.fetchall()
+
+    def clear_data(self):
+        query = "DELETE FROM sensores"
+        try:
+            with sqlite3.connect(self.db_path) as conn:
+                cursor = conn.cursor()
+                cursor.execute(query)
+                conn.commit()
+
+            if self.logger:
+                self.logger.info("DB: Todos os dados foram removidos com sucesso.")
+            return True
+        except Exception as e:
+            if self.logger:
+                self.logger.error(f"DB: Erro ao limpar banco: {e}")
+            raise e

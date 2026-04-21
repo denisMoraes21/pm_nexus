@@ -18,13 +18,13 @@
  */
 struct MQTTParameters
 {
-    const char *MQTT_SERVER;   ///< MQTT broker hostname or IP address.
-    int MQTT_PORT;            ///< MQTT broker port.
-    const char *MQTT_TOPIC_PUB;///< Publish topic for sensor data.
-    const char *MQTT_TOPIC_SUB;///< Subscription topic for incoming messages.
-    const char *MQTT_CLIENT;  ///< MQTT client identifier.
-    int MQTT_TIME_RECONNECT;  ///< Reconnection delay in milliseconds.
-    int MQTT_MAX_RETRY;       ///< Maximum number of MQTT connection attempts.
+    const char *MQTT_SERVER;    ///< MQTT broker hostname or IP address.
+    int MQTT_PORT;              ///< MQTT broker port.
+    const char *MQTT_TOPIC_PUB; ///< Publish topic for sensor data.
+    const char *MQTT_TOPIC_SUB; ///< Subscription topic for incoming messages.
+    const char *MQTT_CLIENT;    ///< MQTT client identifier.
+    int MQTT_TIME_RECONNECT;    ///< Reconnection delay in milliseconds.
+    int MQTT_MAX_RETRY;         ///< Maximum number of MQTT connection attempts.
 };
 
 namespace mqtt
@@ -51,4 +51,6 @@ namespace mqtt
      * @param parameters MQTT connection and retry settings.
      */
     void reconnectMQTT(MQTTParameters parameters);
+
+    void disconnectMQTT();
 }
