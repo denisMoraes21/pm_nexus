@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>PM Nexus - Configuração</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Link do CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+    <header>
+        PM Nexus - Configuração
+    </header>
+
+    <div class="container">
+        <!DOCTYPE html>
+
+        <html lang="pt-BR">
+
+        <head>
+            <meta charset="UTF-8">
+            <title>PM Nexus - Configuração</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="/style.css">
+        </head>
+
+        <body>
+
+            <div class="container">
+
+                <div class="logo-container">
+                    <img src="/images.png" alt="Logo">
+                </div>
+
+                <form action="/config" method="POST">
+
+                    <!-- WIFI -->
+                    <div class="section">
+                        <h3>WiFi</h3>
+
+                        <label>SSID <span class="required">*</span></label>
+                        <input type="text" name="ssid" required>
+
+                        <label>Senha <span class="required">*</span></label>
+                        <input type="password" name="password">
+
+                        <label>Tentativas de conexão</label>
+                        <input type="number" name="try_connection" value="40">
+                    </div>
+
+                    <!-- MQTT -->
+                    <div class="section">
+                        <h3>MQTT</h3>
+
+                        <label>Servidor <span class="required">*</span></label>
+                        <input type="text" name="server" required>
+
+                        <label>Porta <span class="required">*</span></label>
+                        <input type="number" name="port" value="1883">
+
+                        <label>Tópico para publicar <span class="required">*</span></label>
+                        <input type="text" name="topic_pub">
+
+                        <label>Tópico para inscrever</label>
+                        <input type="text" name="topic_sub">
+
+                        <label>Identificação do dispositivo</label>
+                        <input type="text" name="client" value="first">
+
+                        <label>Tempo de reconexão (ms) <span class="required">*</span></label>
+                        <input type="number" name="time_reconnect" value="5000">
+
+                        <label>Máx. tentativas <span class="required">*</span></label>
+                        <input type="number" name="max_retry" value="5">
+                    </div>
+
+                    <!-- SENSOR -->
+                    <div class="section">
+                        <h3>Sensor</h3>
+
+                        <label>Pressão</label>
+                        <input type="number" step="0.01" name="pressure" value="1013.25">
+
+                        <label>Quantidade de amostras <span class="required">*</span></label>
+                        <input type="number" name="sample_count" value="30">
+
+                        <label>Delay entre amostras (ms)</label>
+                        <input type="number" name="sample_delay" value="120000">
+
+                        <label>Temperatura ambiental mínima</label>
+                        <input type="number" name="min_temperature" value="18">
+
+                        <label>Temperatura ambiental máxima</label>
+                        <input type="number" name="max_temperature" value="24">
+
+                        <label>Umidade ambiental mínima</label>
+                        <input type="number" name="min_humidity" value="40">
+
+                        <label>Umidade ambiental máxima</label>
+                        <input type="number" name="max_humidity" value="60">
+
+                        <label>PM 2.5 mínimo</label>
+                        <input type="number" name="min_pm_25" value="0">
+
+                        <label>PM 2.5 máximo</label>
+                        <input type="number" name="max_pm_25" value="12">
+                    </div>
+
+                    <button type="submit">Salvar Configuração</button>
+
+                </form>
+
+            </div>
+
+        </body>
+
+        </html>
+
+    </div>
+
+</body>
+
+</html>
