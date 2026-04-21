@@ -1,21 +1,74 @@
-# doc Directory
+# PM Nexus
 
-This folder is intended for project documentation assets.
+Solução de hardware com ESP32 e aplicação web para monitoramento de sensores.
 
-## Purpose
+---
 
-- Store diagrams, architecture notes, design documents, and documentation source files.
-- Keep documentation separate from source code and test files.
-- Use this directory for any generated project documentation or supporting design materials.
+## 📷 Hardware
 
-## Recommended contents
+<p align="center">
+    <img src="./hardware.jpeg" width="500"/>
+</p>
 
-- Doxygen configuration files and generated HTML output.
-- Architecture diagrams and flowcharts.
-- Design notes, requirements, and technical descriptions.
-- Documentation source files such as Markdown, UML, or other reference materials.
+---
 
-## Notes
+## ⚙️ Configuração
 
-- The directory is currently empty and can be populated with documentation resources as the project evolves.
-- If Doxygen is used, consider placing configuration files here as well as generated documentation output.
+### 1. Conexão com o dispositivo
+
+Conecte-se à rede Wi-Fi do dispositivo:
+
+- **SSID:** PM_NEXUS  
+- **Senha:** 20802080  
+
+<p align="center">
+    <img src="./wifi.png" width="500"/>
+</p>
+
+---
+
+### 2. Configuração inicial
+
+Acesse a interface web e preencha os parâmetros:
+
+<p align="center">
+    <img src="./config_1.jpeg" width="500"/>
+</p>
+
+<p align="center">
+    <img src="./config_2.jpeg" width="500"/>
+</p>
+
+<p align="center">
+    <img src="./config_3.jpeg" width="500"/>
+</p>
+
+---
+
+### 3. Coleta de dados
+
+Após a configuração, os sensores começam a enviar dados automaticamente.
+
+<p align="center">
+    <img src="./values.jpeg" width="500"/>
+</p>
+
+---
+
+### 4. Dashboard
+
+Os dados são exibidos em tempo real no dashboard:
+
+<p align="center">
+    <img src="./dashboard.jpeg" width="500"/>
+</p>
+
+---
+
+### 5. Configuração do broker MQTT
+
+Também é possível alterar as configurações do broker MQTT:
+
+<p align="center">
+    <img src="./config_broker.jpeg" width="500"/>
+</p>
